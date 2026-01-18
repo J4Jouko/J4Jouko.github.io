@@ -6,12 +6,14 @@
     <title>Art - Game Artist Portfolio</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../js/fireflies.js"></script>
+    <script src="../js/carousel.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Portfolio</div>
+            <div class="nav-logo">Portfolio | Juliette Joukowski</div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="games.html" class="nav-link">Games</a></li>
@@ -23,7 +25,9 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="projects-grid">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
             <!-- Art 1 -->
             <div class="project-card">
                 <div class="project-image">
@@ -93,6 +97,10 @@
                     <h3 class="project-title">Animation Studies</h3>
                     <p class="project-date">August 2025</p>
                     <p class="project-tasks">Character animation, motion design, physics</p>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" aria-label="Previous artworks"></button>
+                <button class="carousel-btn next" aria-label="Next artworks"></button>
+            </div>
                 </div>
             </div>
         </div>

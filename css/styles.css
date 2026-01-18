@@ -91,7 +91,7 @@ html, body {
 }
 
 .nav-link {
-    color: var(--text-secondary);
+    color: #BAC4E5;
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
@@ -101,7 +101,10 @@ html, body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--accent-primary);
+    background: linear-gradient(135deg, #FFC769, #FFD580);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-link.active::after {
@@ -111,7 +114,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(90deg, #FFC769, #FFD580);
 }
 
 /* ============================================
@@ -156,10 +159,234 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
     gap: var(--spacing-lg);
-    max-width: 1400px;
+    max-width: 900px;
     margin: 0 auto;
+    justify-content: center;
+}
+
+/* ============================================
+   3D CAROUSEL
+   ============================================ */
+
+.carousel-3d-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    margin-top: 50px;
+    height: 450px; /* Give it a fixed height */
+}
+
+.carousel-3d {
+    position: relative;
+    width: 320px; /* Width of the center card */
+    transform-style: preserve-3d;
+}
+
+.project-card-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;
+    will-change: transform;
+}
+
+.carousel-3d .project-card {
+    height: 100%; /* Ensure cards fill the container */
+    pointer-events: auto;
+}
+
+/* Hover effect for the ACTIVE card in the 3D carousel */
+.carousel-3d .project-card-container.active:hover .project-card {
+    border-color: #EAA2A5;
+    box-shadow: 
+        0 10px 30px rgba(234, 162, 165, 0.2),
+        0 0 20px rgba(234, 162, 165, 0.1);
+    transform: translateY(-8px);
+}
+
+/* Card states */
+.project-card-container.active {
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    opacity: 1;
+}
+
+.project-card-container.left {
+    transform: translateX(-45%) scale(0.8) rotateY(45deg);
+    z-index: 2;
+    opacity: 0.7;
+}
+
+.project-card-container.right {
+    transform: translateX(45%) scale(0.8) rotateY(-45deg);
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.project-card-container.back-left {
+    transform: translateX(-60%) scale(0.7) rotateY(55deg);
+    z-index: 0;
+    opacity: 0;
+}
+
+.project-card-container.back-right {
+    transform: translateX(60%) scale(0.7) rotateY(-55deg);
+    z-index: 0;
+    opacity: 0;
+}
+
+
+/* ============================================
+   CAROUSEL STYLES
+   ============================================ */
+
+.carousel-container {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px; /* gauche / centre / droite */
+    align-items: center;
+    gap: 0;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 12px; /* espace pour hover */
+    box-sizing: border-box; /* inclut le padding dans la largeur */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s ease;
+}
+
+.carousel-track .project-card {
+    flex: 0 0 calc((100% - 72px) / 4); /* 4 cartes exactes */
+}
+
+.carousel-controls {
+    display: none;
+}
+
+.carousel-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-tertiary);
+    color: #BAC4E5;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+/* Chevron via ::before */
+.carousel-arrow.prev::before,
+.carousel-arrow.next::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+}
+
+.carousel-arrow.prev::before {
+    transform: rotate(-135deg); /* chevron gauche */
+}
+
+.carousel-arrow.next::before {
+    transform: rotate(45deg); /* chevron droit */
+}
+
+.carousel-arrow.prev {
+    justify-self: start; /* colle la flèche gauche à gauche */
+}
+
+.carousel-arrow.next {
+    justify-self: end;   /* colle la flèche droite à droite */
+}
+
+.carousel-arrow:hover:not(:disabled) {
+    background: linear-gradient(135deg, #FFC769, #FFD580);
+    border-color: #FFC769;
+    color: var(--bg-primary);
+    transform: scale(1.1);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE CAROUSEL
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .carousel-track .project-card {
+        flex: 0 0 calc(25% - 18px);
+        min-width: calc(25% - 18px);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-track .project-card {
+        flex: 0 0 calc(25% - 18px);
+        min-width: calc(25% - 18px);
+    }
+    
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: var(--font-lg);
+    }
+    
+    .carousel-btn.prev {
+        left: var(--spacing-md);
+    }
+    
+    .carousel-btn.next {
+        right: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        padding: var(--spacing-md);
+    }
+    
+    .carousel-track .project-card {
+        flex: 0 0 calc(25% - 18px);
+        min-width: calc(25% - 18px);
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-base);
+    }
+    
+    .carousel-btn.prev {
+        left: var(--spacing-sm);
+    }
+    
+    .carousel-btn.next {
+        right: var(--spacing-sm);
+    }
 }
 
 .project-card {
@@ -174,11 +401,12 @@ body {
     cursor: pointer;
 }
 
-.project-card:hover {
-    border-color: var(--accent-primary);
+.projects-grid .project-card:hover,
+.carousel-track .project-card:hover {
+    border-color: #EAA2A5;
     box-shadow: 
-        0 10px 30px rgba(124, 58, 237, 0.2),
-        0 0 20px rgba(124, 58, 237, 0.1);
+        0 10px 30px rgba(234, 162, 165, 0.2),
+        0 0 20px rgba(234, 162, 165, 0.1);
     transform: translateY(-8px);
 }
 
@@ -221,14 +449,14 @@ body {
 
 .project-date {
     font-size: var(--font-sm);
-    color: var(--accent-primary);
+    color: #AE779C;
     margin-bottom: var(--spacing-xs);
     font-weight: 500;
 }
 
 .project-tasks {
     font-size: var(--font-sm);
-    color: var(--text-secondary);
+    color: #D6B495;
     line-height: 1.5;
 }
 
@@ -268,9 +496,9 @@ body {
 }
 
 .footer-link:hover {
-    color: var(--accent-primary);
-    border-color: var(--accent-primary);
-    background-color: rgba(124, 58, 237, 0.1);
+    color: #EAA2A5;
+    border-color: #EAA2A5;
+    background-color: rgba(234, 162, 165, 0.1);
     transform: translateY(-4px);
 }
 
@@ -388,3 +616,21 @@ body {
 .project-card:nth-child(4) { animation-delay: 0.4s; }
 .project-card:nth-child(5) { animation-delay: 0.5s; }
 .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ============================================
+   FIREFLY VFX ANIMATION
+   ============================================ */
+
+.firefly {
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #FFD5E5, #EAA2A5 60%, #7c3aed);
+    box-shadow: 
+        0 0 10px #EAA2A5,
+        0 0 20px #AE779C,
+        0 0 30px #7c3aed;
+    filter: blur(1px);
+    z-index: 1;
+    /* animation is now handled by JS for interactivity */
+}
