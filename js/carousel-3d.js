@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel-3d');
+    const carousel = document.querySelector('.carousel-3d-stage');
     if (!carousel) return;
 
-    const cards = Array.from(carousel.querySelectorAll('.project-card-container'));
+    const cards = Array.from(carousel.querySelectorAll('.carousel-3d-card-container'));
     const numCards = cards.length;
     if (numCards === 0) return;
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateCarouselClasses() {
         cards.forEach((card, i) => {
-            card.className = 'project-card-container'; // Reset classes
+            card.className = 'carousel-3d-card-container'; // Reset classes
             
             const pos = (i - activeIndex + numCards) % numCards;
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     carousel.addEventListener('click', (e) => {
-        const clickedCard = e.target.closest('.project-card-container');
+        const clickedCard = e.target.closest('.carousel-3d-card-container');
         if (!clickedCard || clickedCard.classList.contains('active')) {
             return;
         }
