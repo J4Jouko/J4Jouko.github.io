@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Game Artist Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-lg);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .about-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: start;
+        }
+
+        .about-text h2 {
+            font-size: var(--font-xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--accent-primary);
+        }
+
+        .about-text p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .skills {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--spacing-md);
+        }
+
+        .skills h3 {
+            color: var(--accent-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-lg);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: rgba(124, 58, 237, 0.1);
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            margin: var(--spacing-xs);
+            border-radius: 20px;
+            font-size: var(--font-sm);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background-color: rgba(124, 58, 237, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .about-body {
+                grid-template-columns: 1fr;
+            }
+
+            .about-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                padding: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Portfolio</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link">Games</a></li>
+                <li class="nav-item"><a href="art.html" class="nav-link">Art</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="about-content">
+            <div class="about-header">
+                <h1>About Me</h1>
+                <p style="color: var(--text-secondary);">Game Artist & Creative Professional</p>
+            </div>
+
+            <div class="about-body">
+                <div class="about-text">
+                    <h2>My Journey</h2>
+                    <p>
+                        I'm a passionate game artist with a deep love for creating immersive visual experiences. 
+                        With years of experience in the gaming industry, I specialize in character design, environment art, 
+                        and visual effects that bring games to life.
+                    </p>
+                    <p>
+                        My work spans multiple genres and platforms, from indie games to AAA productions. 
+                        I combine technical skills with artistic vision to create compelling visual narratives 
+                        that resonate with players worldwide.
+                    </p>
+                </div>
+
+                <div class="skills">
+                    <h3>Skills & Tools</h3>
+                    <div>
+                        <span class="skill-tag">Character Design</span>
+                        <span class="skill-tag">3D Modeling</span>
+                        <span class="skill-tag">Concept Art</span>
+                        <span class="skill-tag">Texture Painting</span>
+                        <span class="skill-tag">VFX Design</span>
+                        <span class="skill-tag">Animation</span>
+                        <span class="skill-tag">Blender</span>
+                        <span class="skill-tag">Substance Painter</span>
+                        <span class="skill-tag">Maya</span>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Unreal Engine</span>
+                        <span class="skill-tag">Unity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://linkedin.com" class="footer-link" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://itch.io" class="footer-link" target="_blank" title="Itch.io">
+                <i class="fab fa-itch-io"></i>
+            </a>
+            <a href="../assets/cv.pdf" class="footer-link" target="_blank" title="Download CV">
+                <i class="fas fa-file-pdf"></i>
+            </a>
+            <a href="mailto:your.email@example.com" class="footer-link" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
