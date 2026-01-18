@@ -124,6 +124,24 @@
     overflow-y: auto; /* Add scroll if content still overflows */
 }
 
+/* Scrollbar styling for card info */
+.card-3d__info::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-3d__info::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.card-3d__info::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 3px;
+}
+
+.card-3d__info::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+}
+
 .card-3d__title {
     font-size: var(--font-lg);
     font-weight: 600;
