@@ -2,18 +2,27 @@
    3D CAROUSEL (Index Page)
    ============================================ */
 
+.carousel-centering-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
 .carousel-3d-scene {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 1000px;
-    margin-top: 50px;
-    height: 450px; /* Give it a fixed height */
+    perspective: 2500px;
+    height: 65vh; /* Responsive height */
 }
 
 .carousel-3d-stage {
     position: relative;
-    width: 320px; /* Width of the center card */
+    width: 25vw; /* Responsive width */
+    min-width: 320px; /* Prevent it from getting too small */
     transform-style: preserve-3d;
     height: 100%;
 }
@@ -31,31 +40,31 @@
 
 /* Card states */
 .carousel-3d-card-container.active {
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scale3d(1.2, 1.1, 1); /* Emphasize width */
     z-index: 3;
     opacity: 1;
 }
 
 .carousel-3d-card-container.left {
-    transform: translateX(-45%) scale(0.8) rotateY(45deg);
+    transform: translateX(-100%) scale(0.7) rotateY(30deg);
     z-index: 2;
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 .carousel-3d-card-container.right {
-    transform: translateX(45%) scale(0.8) rotateY(-45deg);
+    transform: translateX(100%) scale(0.7) rotateY(-30deg);
     z-index: 1;
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 .carousel-3d-card-container.back-left {
-    transform: translateX(-60%) scale(0.7) rotateY(55deg);
+    transform: translateX(-150%) scale(0.7) rotateY(55deg);
     z-index: 0;
     opacity: 0;
 }
 
 .carousel-3d-card-container.back-right {
-    transform: translateX(60%) scale(0.7) rotateY(-55deg);
+    transform: translateX(150%) scale(0.7) rotateY(-55deg);
     z-index: 0;
     opacity: 0;
 }
@@ -86,9 +95,8 @@
 }
 
 .card-3d__image {
+    flex: 2; /* Takes up 2/3 of the height */
     position: relative;
-    width: 100%;
-    padding-bottom: 100%; /* 1:1 aspect ratio */
     overflow: hidden;
     background-color: var(--bg-secondary);
 }
@@ -108,11 +116,12 @@
 }
 
 .card-3d__info {
+    flex: 1; /* Takes up 1/3 of the height */
     padding: var(--spacing-md);
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align content to the top */
+    overflow-y: auto; /* Add scroll if content still overflows */
 }
 
 .card-3d__title {
