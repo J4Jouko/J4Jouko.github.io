@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        e.preventDefault();
+
         const clickedIndex = cards.indexOf(clickedCard);
         
         // Determine if the clicked card was to the left or right of active

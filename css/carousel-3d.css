@@ -83,6 +83,8 @@
     flex-direction: column;
     height: 100%;
     pointer-events: auto; /* Allow clicks on the card */
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Hover effect for the ACTIVE card in the 3D carousel */
