@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../js/fireflies.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Portfolio | Juliette Joukowski</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link active">Games</a></li>
+                <li class="nav-item"><a href="art.html" class="nav-link">Art</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content (Scrollable Body) -->
+    <main class="project-page">
+        
+        <!-- Banner Section -->
+        <header class="project-banner">
+            <div class="banner-image">
+                <!-- Placeholder image using existing asset -->
+                <img src="../assets/games/game1.jpg" alt="Project Banner">
+            </div>
+            <div class="banner-overlay">
+                <div class="banner-content">
+                    <h1 class="project-main-title">Mystic Realm RPG</h1>
+                    <p class="project-subtitle">Character Design & Environment Art</p>
+                    <p class="project-description">
+                        A deep dive into the visual development of Mystic Realm, exploring the creation of its ethereal characters and haunting landscapes.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Staggered Content Grid -->
+        <div class="project-content-grid">
+            
+            <!-- Block 1: Image Left, Text Right -->
+            <section class="content-block">
+                <div class="block-image">
+                    <img src="../assets/games/game2.jpg" alt="Concept Art">
+                </div>
+                <div class="block-text">
+                    <h2>Initial Concepts</h2>
+                    <p>The early stages of development focused on establishing the mood and tone of the world. We experimented with various color palettes and lighting scenarios to create a sense of mystery and wonder.</p>
+                </div>
+            </section>
+
+            <!-- Block 2: Text Left, Image Right (Handled by CSS) -->
+            <section class="content-block">
+                <div class="block-image">
+                    <img src="../assets/games/game3.jpg" alt="Character Modeling">
+                </div>
+                <div class="block-text">
+                    <h2>Character Modeling</h2>
+                    <p>Translating the 2D concepts into 3D required careful attention to topology and silhouette. The main protagonist went through several iterations to ensure the armor design was both functional and visually striking.</p>
+                </div>
+            </section>
+
+            <!-- Block 3: Image Left, Text Right -->
+            <section class="content-block">
+                <div class="block-image">
+                    <img src="../assets/games/game4.jpg" alt="Environment Design">
+                </div>
+                <div class="block-text">
+                    <h2>Environment Design</h2>
+                    <p>The environments were built using a modular asset kit, allowing for rapid iteration of level layouts. Dynamic lighting and particle effects were added to bring the static meshes to life.</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://linkedin.com" class="footer-link" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://itch.io" class="footer-link" target="_blank" title="Itch.io">
+                <i class="fab fa-itch-io"></i>
+            </a>
+            <a href="../assets/cv.pdf" class="footer-link" target="_blank" title="Download CV">
+                <i class="fas fa-file-pdf"></i>
+            </a>
+            <a href="mailto:your.email@example.com" class="footer-link" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </footer>
+    <script src="../js/project.js"></script>
+</body>
+</html>

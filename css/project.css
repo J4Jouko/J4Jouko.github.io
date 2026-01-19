@@ -1,0 +1,236 @@
+/* ============================================
+   PROJECT PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* Override global no-scroll layout for this page */
+html, body {
+    scroll-snap-type: y mandatory;
+    height: auto;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    display: block !important;
+}
+
+/* Scrollbar styling to match main site */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+}
+
+.project-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Ensure Navbar and Footer are fixed and on top for this page */
+body .navbar,
+body .footer {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+body .footer { bottom: 0; }
+
+/* ============================================
+   BANNER SECTION
+   ============================================ */
+
+.project-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-primary);
+    z-index: 1;
+    padding-top: 70px; /* Navbar height */
+    padding-bottom: 70px; /* Footer height */
+}
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* Taller for parallax effect */
+    z-index: 0;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.banner-overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: var(--spacing-lg);
+    max-width: 800px;
+    /* Animation init state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.project-banner.is-active .banner-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, #fff, var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.project-subtitle {
+    font-size: var(--font-xl);
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.project-description {
+    font-size: var(--font-lg);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ============================================
+   STAGGERED CONTENT GRID (QUINCONCE)
+   ============================================ */
+
+.project-content-grid {
+    display: contents; /* Allows children to be positioned relative to project-page */
+}
+
+.content-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    justify-content: center;
+    background-color: var(--bg-primary);
+    padding: 0 var(--spacing-lg);
+    opacity: 0; /* Controlled by JS */
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+/* Even blocks reversed: Text Left, Image Right */
+.content-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.block-image {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border: 1px solid var(--border-color);
+    max-width: 600px;
+    /* Animation init state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.content-block.is-active .block-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.block-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.block-image:hover img {
+    transform: scale(1.03);
+}
+
+.block-text {
+    flex: 1;
+    padding: var(--spacing-md);
+    max-width: 600px;
+    /* Animation init state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.content-block.is-active .block-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.block-text h2 {
+    font-size: 2rem;
+    color: var(--accent-secondary);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+.block-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-primary);
+}
+
+.block-text p {
+    font-size: var(--font-base);
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-block, 
+    .content-block:nth-child(even) {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .project-main-title {
+        font-size: 2.5rem;
+    }
+}
