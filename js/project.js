@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             section.style.opacity = opacity;
 
+            // Disable pointer events on mostly transparent sections to allow hovering on content below.
+            section.style.pointerEvents = opacity > 0.9 ? 'auto' : 'none';
+
             // Trigger internal content animation when section starts appearing
             if (opacity > 0.2) {
                 section.classList.add('is-active');
