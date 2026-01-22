@@ -8,6 +8,14 @@
     box-sizing: border-box;
 }
 
+/* Disable image drag and drop */
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 :root {
     /* Dark Mystic Color Palette */
     --bg-primary: #0a0e27;      /* Very dark blue */

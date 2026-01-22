@@ -11,6 +11,14 @@
     font-style: normal;
 }
 
+/* Disable image drag and drop */
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 /* Override global no-scroll layout for this page */
 html, body {
     scroll-snap-type: y mandatory;
