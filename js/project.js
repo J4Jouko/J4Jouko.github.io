@@ -41,33 +41,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const vh = window.innerHeight;
         
         sections.forEach((section, index) => {
-            // First section (index 0) is the base, always visible underneath
+            // Calculate the scroll position for this section
+            const sectionScrollStart = index * vh;
+            const sectionScrollEnd = (index + 1) * vh;
+            
+            // First section (banner) - handle fade out when scrolling down
             if (index === 0) {
-                section.style.opacity = 1;
-                section.classList.add('is-active');
+                if (scrollY < vh) {
+                    // Banner is visible
+                    let fadeOutProgress = scrollY / vh;
+                    let opacity = 1 - (fadeOutProgress * 0.8); // Fade to 20% opacity
+                    section.style.opacity = Math.max(0.2, opacity);
+                    section.classList.add('is-active');
+                    section.style.pointerEvents = scrollY < vh * 0.5 ? 'auto' : 'none';
+                } else {
+                    section.style.opacity = 0.2;
+                    section.classList.add('is-active');
+                    section.style.pointerEvents = 'none';
+                }
                 return;
             }
 
-            // Calculate opacity for subsequent sections
-            // Section i fades in between scroll position (i-1)*vh and i*vh
+            // For other sections
             const start = (index - 1) * vh;
-            
-            // Calculate progress (0 to 1) within the section's scroll range
             let progress = (scrollY - start) / vh;
             
             // Steeper transition: Fades in between 10% and 60% of the scroll distance
-            // This ensures we don't linger in a semi-transparent state
             let opacity = (progress - 0.1) / 0.5;
-            
-            // Clamp opacity between 0 and 1
             opacity = Math.max(0, Math.min(1, opacity));
             
+            // Apply transition effect
+            section.style.transition = 'opacity 0.3s ease-out';
             section.style.opacity = opacity;
 
-            // Disable pointer events on mostly transparent sections to allow hovering on content below.
+            // Disable pointer events on mostly transparent sections
             section.style.pointerEvents = opacity > 0.9 ? 'auto' : 'none';
 
-            // Trigger internal content animation when section starts appearing
+            // Trigger internal content animation with smoother transitions
             if (opacity > 0.2) {
                 section.classList.add('is-active');
             } else {

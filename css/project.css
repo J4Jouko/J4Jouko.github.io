@@ -68,6 +68,30 @@ body .footer { bottom: 0; }
     padding-bottom: 70px; /* Footer height */
 }
 
+.project-banner::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to top, rgba(10, 14, 39, 1), rgba(10, 14, 39, 0));
+    z-index: 2;
+    pointer-events: none;
+}
+
+.project-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(10, 14, 39, 1), rgba(10, 14, 39, 0));
+    z-index: 2;
+    pointer-events: none;
+}
+
 .banner-image {
     position: absolute;
     top: 0;
@@ -111,6 +135,16 @@ body .footer { bottom: 0; }
     text-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
+.project-meta {
+    font-size: var(--font-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 400;
+    padding: var(--spacing-sm) 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
 .project-subtitle {
     font-size: var(--font-xl);
     color: var(--accent-primary);
@@ -147,6 +181,10 @@ body .footer { bottom: 0; }
     opacity: 0; /* Controlled by JS */
     padding-top: 70px;
     padding-bottom: 70px;
+}
+
+.content-block:first-of-type {
+    background: linear-gradient(to bottom, rgba(17, 17, 27, 0.9), var(--bg-primary) 30%);
 }
 
 /* Even blocks reversed: Text Left, Image Right */
@@ -231,6 +269,16 @@ body .footer { bottom: 0; }
     font-size: var(--font-base);
     color: var(--text-secondary);
     line-height: 1.8;
+    text-align: justify;
+}
+
+.thanks-message {
+    font-family: 'Caveat', 'Brush Script MT', cursive !important;
+    font-size: 1.8rem !important;
+    color: var(--accent-secondary) !important;
+    margin-top: var(--spacing-lg) !important;
+    text-align: center !important;
+    font-weight: 700;
 }
 
 /* Responsive */
