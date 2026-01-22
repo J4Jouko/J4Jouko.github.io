@@ -145,10 +145,11 @@
 }
 
 .card-3d__title {
-    font-size: var(--font-lg);
+    font-size: var(--font-xl);
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
-    color: var(--text-primary);
+    color: #E5EDF7;
+    font-family: 'Cinzel', serif;
 }
 
 .card-3d__date {

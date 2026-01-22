@@ -2,6 +2,15 @@
    PROJECT PAGE SPECIFIC STYLES
    ============================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+@font-face {
+    font-family: 'League';
+    src: url('../assets/fonts/League.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Override global no-scroll layout for this page */
 html, body {
     scroll-snap-type: y mandatory;
@@ -21,12 +30,12 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--accent-primary);
+    background: #ffcc72;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-secondary);
+    background: #ffd98e;
 }
 
 .project-page {
@@ -129,15 +138,16 @@ body .footer { bottom: 0; }
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: var(--spacing-sm);
-    background: linear-gradient(135deg, #fff, var(--accent-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #d2cc7c;
+    font-family: 'League', sans-serif;
     text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    line-height: 0.9;
 }
 
 .project-meta {
     font-size: var(--font-base);
-    color: var(--text-secondary);
+    color: #E5EDF7;
     margin-bottom: var(--spacing-sm);
     font-weight: 400;
     padding: var(--spacing-sm) 0;
@@ -145,17 +155,66 @@ body .footer { bottom: 0; }
     border-bottom: 1px solid var(--border-color);
 }
 
+.project-meta-text {
+    margin-bottom: 8px;
+}
+
+.project-tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.project-tools img {
+    height: 80px;
+    width: auto;
+    opacity: 0.9;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.project-tools img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Floating tools at top-right of banner */
+.banner-tools {
+    position: absolute;
+    top: 90px; /* below navbar */
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 3; /* above overlay gradients */
+}
+
+@media (max-width: 768px) {
+    .banner-tools {
+        top: 84px;
+        right: 12px;
+        gap: 10px;
+    }
+    .banner-tools img {
+        height: 64px;
+    }
+}
+
 .project-subtitle {
     font-size: var(--font-xl);
-    color: var(--accent-primary);
+    color: #d2d3c1;
     margin-bottom: var(--spacing-md);
     font-weight: 600;
 }
 
 .project-description {
     font-size: var(--font-lg);
-    color: var(--text-primary);
+    color: #E5EDF7;
     line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    text-align-last: center;
 }
 
 /* ============================================
@@ -249,10 +308,11 @@ body .footer { bottom: 0; }
 
 .block-text h2 {
     font-size: 2rem;
-    color: var(--accent-secondary);
+    color: #8a7a4d;
     margin-bottom: var(--spacing-md);
     position: relative;
     display: inline-block;
+    font-family: 'League', sans-serif;
 }
 
 .block-text h2::after {
@@ -262,12 +322,12 @@ body .footer { bottom: 0; }
     left: 0;
     width: 60px;
     height: 3px;
-    background: var(--accent-primary);
+    background: #9a8f60;
 }
 
 .block-text p {
     font-size: var(--font-base);
-    color: var(--text-secondary);
+    color: #cdd3dd;
     line-height: 1.8;
     text-align: justify;
 }
@@ -275,10 +335,26 @@ body .footer { bottom: 0; }
 .thanks-message {
     font-family: 'Caveat', 'Brush Script MT', cursive !important;
     font-size: 1.8rem !important;
-    color: var(--accent-secondary) !important;
+    color: #aab2c1 !important;
     margin-top: var(--spacing-lg) !important;
     text-align: center !important;
     font-weight: 700;
+}
+
+/* Block logo positioning */
+.block-logo {
+    height: 120px;
+    width: auto;
+    margin-top: 3rem;
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: block;
+    margin-left: auto; /* Push to the right */
+}
+
+.block-logo:hover {
+    opacity: 1;
+    transform: translateY(-2px);
 }
 
 /* Responsive */

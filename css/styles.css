@@ -49,6 +49,8 @@ html, body {
     line-height: 1.6;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
 /* ============================================
    NAVIGATION BAR
    ============================================ */
@@ -78,7 +80,7 @@ html, body {
 .nav-logo {
     font-size: var(--font-xl);
     font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(135deg, #adb7d4, #d4daf0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -369,10 +371,11 @@ body {
 }
 
 .project-title {
-    font-size: var(--font-lg);
+    font-size: var(--font-xl);
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
-    color: var(--text-primary);
+    color: #E5EDF7;
+    font-family: 'Cinzel', serif;
 }
 
 .project-date {
