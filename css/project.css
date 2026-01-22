@@ -137,12 +137,36 @@ body .footer { bottom: 0; }
 .project-main-title {
     font-size: 3.5rem;
     font-weight: 800;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
     color: #d2cc7c;
     font-family: 'League', sans-serif;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
     text-transform: uppercase;
     line-height: 0.9;
+    position: relative;
+    background: linear-gradient(90deg, 
+        #d2cc7c 0%, 
+        #d2cc7c 40%, 
+        #fff 50%, 
+        #d2cc7c 60%, 
+        #d2cc7c 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
+    animation: shine 6s ease-in-out 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: -200% center;
+    }
+    20% {
+        background-position: 200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
 }
 
 .project-meta {
@@ -150,13 +174,16 @@ body .footer { bottom: 0; }
     color: #E5EDF7;
     margin-bottom: var(--spacing-sm);
     font-weight: 400;
-    padding: var(--spacing-sm) 0;
+    padding: 8px 0;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-meta-text {
-    margin-bottom: 8px;
+    margin: 0;
 }
 
 .project-tools {
@@ -240,6 +267,13 @@ body .footer { bottom: 0; }
     opacity: 0; /* Controlled by JS */
     padding-top: 70px;
     padding-bottom: 70px;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.content-block.is-active {
+    visibility: visible;
+    z-index: 10;
 }
 
 .content-block:first-of-type {
