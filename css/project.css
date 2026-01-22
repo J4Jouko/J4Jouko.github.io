@@ -291,6 +291,33 @@ body .footer { bottom: 0; }
         0 0 20px rgba(234, 162, 165, 0.1);
 }
 
+/* 3D Model Viewer Block */
+.block-3d-viewer {
+    flex: 2;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(26, 35, 69, 0.4), rgba(10, 14, 39, 0.6));
+    border: 1px solid rgba(234, 162, 165, 0.15);
+    /* Animation init state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.content-block.is-active .block-3d-viewer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+model-viewer {
+    --poster-color: transparent;
+    --progress-bar-color: #EAA2A5;
+}
+
 .block-text {
     flex: 1;
     padding: var(--spacing-md);

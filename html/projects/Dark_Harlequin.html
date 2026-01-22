@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/project.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <script src="../../js/fireflies.js"></script>
 </head>
 <body>
@@ -101,6 +102,30 @@
                 <div class="block-text">
                     <h2>Production Pipeline</h2>
                     <p>Overview of the main production stages: high poly sculpting in ZBrush, quick retopology using ZBrush and Blender, low poly wireframe, and texturing in Substance Painter. This pipeline reflects a fast and efficient workflow adapted to a short production timeframe.</p>
+                </div>
+            </section>
+
+            <!-- Block 4.5: 3D Model Viewer -->
+            <section class="content-block">
+                <div class="block-3d-viewer">
+                    <model-viewer
+                        src="../../assets/art/Dark_Harlequin/Dark_Harlequin_3D_model.glb"
+                        alt="Dark Harlequin 3D Model"
+                        auto-rotate
+                        camera-controls
+                        shadow-intensity="1"
+                        exposure="1"
+                        tone-mapping="commerce"
+                        camera-orbit="0deg 75deg 2.5m"
+                        min-camera-orbit="auto auto 1m"
+                        max-camera-orbit="auto auto 5m"
+                        interaction-prompt="auto"
+                        style="width: 100%; height: 100%; background-color: transparent;">
+                    </model-viewer>
+                </div>
+                <div class="block-text">
+                    <h2>Interactive 3D Model</h2>
+                    <p>Explore the full 3D model in real-time. Use your mouse to rotate, zoom, and inspect the character from any angle. The model features all textures and materials applied in Substance 3D Painter, ready for integration into Wild Rift's game engine.</p>
                 </div>
             </section>
 
