@@ -10,87 +10,107 @@
     <script src="../js/fireflies.js"></script>
     <style>
         .about-content {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 0;
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-lg);
-            padding: var(--spacing-lg);
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) 0;
+            height: calc(100vh - 140px);
+            justify-content: flex-start;
         }
 
         .about-header {
             text-align: center;
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: 0;
         }
 
         .about-header h1 {
             font-size: 2.5rem;
             margin-bottom: var(--spacing-md);
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #E99897;
         }
 
         .about-body {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-            align-items: start;
+            display: flex;
+            flex-direction: row;
+            gap: var(--spacing-xl);
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 var(--spacing-lg);
+            margin-left: 15%;
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: none;
+            padding-right: var(--spacing-lg);
         }
 
         .about-text h2 {
             font-size: var(--font-xl);
             margin-bottom: var(--spacing-md);
-            color: var(--accent-primary);
+            color: #E99897;
         }
 
         .about-text p {
             margin-bottom: var(--spacing-md);
             color: var(--text-secondary);
             line-height: 1.8;
+            text-align: justify;
         }
 
-        .skills {
-            background-color: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: var(--spacing-md);
+        .about-image {
+            flex: 0 0 300px;
+            width: 300px;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #E99897;
+            box-shadow: 0 10px 30px rgba(233, 152, 151, 0.2);
         }
 
-        .skills h3 {
-            color: var(--accent-primary);
-            margin-bottom: var(--spacing-md);
-            font-size: var(--font-lg);
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .skill-tag {
-            display: inline-block;
-            background-color: rgba(124, 58, 237, 0.1);
-            border: 1px solid var(--accent-primary);
-            color: var(--accent-primary);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            margin: var(--spacing-xs);
-            border-radius: 20px;
-            font-size: var(--font-sm);
-            transition: var(--transition);
-        }
+        @media (max-width: 1024px) {
+            .about-body {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
 
-        .skill-tag:hover {
-            background-color: rgba(124, 58, 237, 0.2);
+            .about-text {
+                max-width: 100%;
+            }
+
+            .about-image {
+                width: 250px;
+                height: 250px;
+            }
         }
 
         @media (max-width: 768px) {
-            .about-body {
-                grid-template-columns: 1fr;
+            .about-content {
+                height: auto;
+                justify-content: flex-start;
+                padding: var(--spacing-md);
             }
 
             .about-header h1 {
                 font-size: 2rem;
             }
 
-            .about-content {
-                padding: var(--spacing-md);
+            .about-body {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .about-image {
+                width: 200px;
+                height: 200px;
             }
         }
     </style>
@@ -118,36 +138,24 @@
             </div>
 
             <div class="about-body">
+                <div class="about-image">
+                    <img src="../assets/profile.jpg" alt="Juliette Joukowski">
+                </div>
+
                 <div class="about-text">
                     <h2>My Journey</h2>
                     <p>
-                        I'm a passionate game artist with a deep love for creating immersive visual experiences. 
-                        With years of experience in the gaming industry, I specialize in character design, environment art, 
-                        and visual effects that bring games to life.
+                        I'm Juliette, a French-Greek Game Artist currently in my final year of a Master's degree in Game Art at IIM Paris.
                     </p>
                     <p>
-                        My work spans multiple genres and platforms, from indie games to AAA productions. 
-                        I combine technical skills with artistic vision to create compelling visual narratives 
-                        that resonate with players worldwide.
+                        I specialize in 3D character and creature art, with a strong interest in bringing believable personalities to life through shape, expression, and stylization. I enjoy working across the entire character pipeline, from concept interpretation to modeling, retopology, texturing, and game engine integration.
                     </p>
-                </div>
-
-                <div class="skills">
-                    <h3>Skills & Tools</h3>
-                    <div>
-                        <span class="skill-tag">Character Design</span>
-                        <span class="skill-tag">3D Modeling</span>
-                        <span class="skill-tag">Concept Art</span>
-                        <span class="skill-tag">Texture Painting</span>
-                        <span class="skill-tag">VFX Design</span>
-                        <span class="skill-tag">Animation</span>
-                        <span class="skill-tag">Blender</span>
-                        <span class="skill-tag">Substance Painter</span>
-                        <span class="skill-tag">Maya</span>
-                        <span class="skill-tag">Photoshop</span>
-                        <span class="skill-tag">Unreal Engine</span>
-                        <span class="skill-tag">Unity</span>
-                    </div>
+                    <p>
+                        Throughout my studies, I have contributed to various game projects (couch games, adventure games, boss fights, VR) developed in Unity and Unreal Engine, which helped me build a solid production-oriented workflow and strong teamwork skills.
+                    </p>
+                    <p>
+                        Alongside my studies, I gained professional experience at Sporty Peppers, a video game startup where I handled the full artistic production, and I am currently working at Thales on 2D and 3D serious games for aviation-related e-learning modules.
+                    </p>
                 </div>
             </div>
         </div>
