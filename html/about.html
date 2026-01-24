@@ -32,9 +32,9 @@
         }
 
         .about-body {
-            display: flex;
-            flex-direction: row;
-            gap: var(--spacing-xl);
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            column-gap: var(--spacing-xl);
             align-items: center;
             justify-content: flex-start;
             padding: 0 var(--spacing-lg);
@@ -51,6 +51,8 @@
             font-size: var(--font-xl);
             margin-bottom: var(--spacing-md);
             color: #E99897;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
         }
 
         .about-text p {
@@ -68,6 +70,7 @@
             overflow: hidden;
             border: 2px solid #E99897;
             box-shadow: 0 10px 30px rgba(233, 152, 151, 0.2);
+            justify-self: center;
         }
 
         .about-image img {
@@ -78,8 +81,9 @@
 
         @media (max-width: 1024px) {
             .about-body {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: var(--spacing-md);
+                justify-items: center;
             }
 
             .about-text {
@@ -104,8 +108,9 @@
             }
 
             .about-body {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 padding: 0;
+                justify-items: center;
             }
 
             .about-image {
@@ -134,27 +139,34 @@
         <div class="about-content">
             <div class="about-header">
                 <h1>About Me</h1>
-                <p style="color: var(--text-secondary);">Game Artist & Creative Professional</p>
+                <p style="color: var(--text-secondary);">3D Character Modeler</p>
             </div>
 
             <div class="about-body">
                 <div class="about-image">
-                    <img src="../assets/profile.jpg" alt="Juliette Joukowski">
+                    <img src="../assets/art/me/Juliette_smile_rosy.png" alt="Juliette Joukowski">
                 </div>
 
                 <div class="about-text">
-                    <h2>My Journey</h2>
+                    <h2>Hey, I'm Juliette!</h2>
                     <p>
-                        I'm Juliette, a French-Greek Game Artist currently in my final year of a Master's degree in Game Art at IIM Paris.
+                        Thanks a lot for stopping by and taking the time to explore my work ^^
                     </p>
                     <p>
-                        I specialize in 3D character and creature art, with a strong interest in bringing believable personalities to life through shape, expression, and stylization. I enjoy working across the entire character pipeline, from concept interpretation to modeling, retopology, texturing, and game engine integration.
+                        I'm a French-Greek Game Art student, currently in my final year of a Master's degree in Game Art at IIM Paris.
                     </p>
                     <p>
-                        Throughout my studies, I have contributed to various game projects (couch games, adventure games, boss fights, VR) developed in Unity and Unreal Engine, which helped me build a solid production-oriented workflow and strong teamwork skills.
+                        I specialize in 3D art, especially characters and creatures. I love sculpting them piece by piece until they start to feel alive~
                     </p>
                     <p>
-                        Alongside my studies, I gained professional experience at Sporty Peppers, a video game startup where I handled the full artistic production, and I am currently working at Thales on 2D and 3D serious games for aviation-related e-learning modules.
+                        Over the years, I've worked on many game projects (couch games, adventure games, boss fights, VR), using Unity and Unreal Engine. I enjoy handling a project from concept to in-game integration, exploring the full character pipeline along the way.
+                    </p>
+                    <p>
+                        <span style="font-size: 1.15em; font-weight: 700;">I also have professional experience in the industry!</span> I worked at the video game startup Sporty Peppers, where I took care of the entire artistic side of the projects, and I'm currently working at Thales on 2D/3D serious games for aviation-related e-learning modules~
+                    </p>
+                    <p>
+                        Before game art, I studied geology, but I eventually chose to follow what had always been there... drawing, creating worlds, and making games !
+                        I'm excited to keep learning, creating characters, and sharing this journey with you ;D
                     </p>
                 </div>
             </div>
