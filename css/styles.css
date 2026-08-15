@@ -27,6 +27,9 @@ img {
     --text-secondary: #9ca3af;  /* Medium gray */
     --border-color: #2d3548;    /* Dark gray border */
     --hover-bg: #1f2a4a;        /* Hover background */
+    --scrollbar-track: var(--bg-primary);
+    --scrollbar-thumb: #ffcc72;
+    --scrollbar-thumb-hover: #ffd98e;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -44,6 +47,30 @@ img {
     
     /* Transitions */
     --transition: all 0.3s ease;
+}
+
+/* Global scrollbar theme (Dark Harlequin style) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
 }
 
 html, body {
@@ -143,24 +170,6 @@ body {
     padding: var(--spacing-xl);
     background: 
         linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(10, 14, 39, 0) 100%);
-}
-
-/* Scrollbar styling */
-.main-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.main-content::-webkit-scrollbar-track {
-    background: var(--bg-primary);
-}
-
-.main-content::-webkit-scrollbar-thumb {
-    background: var(--accent-primary);
-    border-radius: 4px;
-}
-
-.main-content::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-secondary);
 }
 
 /* ============================================

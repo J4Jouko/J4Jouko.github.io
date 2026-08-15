@@ -152,6 +152,17 @@
     font-family: 'Cinzel', serif;
 }
 
+.card-3d__subtitle {
+    font-size: var(--font-sm);
+    color: #BAC4E5;
+    margin-bottom: 0.45rem;
+    font-weight: 500;
+}
+
+.card-3d__subtitle + .card-3d__date {
+    margin-bottom: 0.45rem;
+}
+
 .card-3d__date {
     font-size: var(--font-sm);
     color: #AE779C;
