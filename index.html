@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
     <script src="js/fireflies.js"></script>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -36,7 +38,8 @@
                                 <img src="assets/art/Enthaur/Enthaur_JoukowskiJ_cover_L.png" alt="Project 1">
                             </div>
                             <div class="card-3d__info">
-                                <h3 class="card-3d__title">Exploration/puzzle/horror - PC - Unreal 5</h3>
+                                <h3 class="card-3d__title">Enthaur: Lost in Slumber</h3>
+                                <p class="card-3d__subtitle">Exploration/puzzle/horror - PC - Unreal 5</p>
                                 <p class="card-3d__date">4 months project | June 2025</p>
                                 <p class="card-3d__tasks">Chara Modeling · 3D Modeling · Level Art</p>
                             </div>
@@ -47,7 +50,8 @@
                         <!-- Project 2 -->
                         <a href="html/projects/Dark_Harlequin.html" class="card-3d">
                             <div class="card-3d__image">
-                                <img src="assets/art/Dark_Harlequin/Dark_harlequin_JulietteJ_vignette_L.png" alt="Project 2">
+                                <img src="assets/art/Dark_Harlequin/Dark_harlequin_JulietteJ_vignette_L.png"
+                                    alt="Project 2">
                             </div>
                             <div class="card-3d__info">
                                 <h3 class="card-3d__title">Dark Harlequin</h3>
@@ -79,13 +83,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <a href="https://www.linkedin.com/in/juliette-joukowski" class="footer-link" target="_blank" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/juliette-joukowski" class="footer-link" target="_blank"
+                title="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
             <a href="https://jouka.itch.io/" class="footer-link" target="_blank" title="Itch.io">
                 <i class="fab fa-itch-io"></i>
             </a>
-            <a href="assets/cv.pdf" class="footer-link" target="_blank" title="Download CV">
+            <a href="assets/JOUKOWSKI_Juliette_CV_2026_.pdf" class="footer-link" target="_blank" title="Download CV">
                 <i class="fas fa-file-pdf"></i>
             </a>
             <a href="#" class="footer-link" title="Copy email" onclick="copyEmail(event)">
@@ -94,7 +99,9 @@
         </div>
     </footer>
 
-    <a style="display: none;" href="https://www.compteurdevisite.com" title="mon compteur de visite"><img src="https://counter1.optistats.ovh/private/compteurdevisite.php?c=844jgzw7d1e14qujgkkexsyrq22ujr3w" border="0" title="mon compteur de visite" alt="mon compteur de visite"></a>
+    <a style="display: none;" href="https://www.compteurdevisite.com" title="mon compteur de visite"><img
+            src="https://counter1.optistats.ovh/private/compteurdevisite.php?c=844jgzw7d1e14qujgkkexsyrq22ujr3w"
+            border="0" title="mon compteur de visite" alt="mon compteur de visite"></a>
 
     <script>
         function copyEmail(event) {
@@ -102,10 +109,10 @@
             const link = event.currentTarget;
             const rect = link.getBoundingClientRect();
             const email = 'juliette.joukowski@gmail.com';
-            
+
             navigator.clipboard.writeText(email).then(() => {
                 console.log('Email copied to clipboard');
-                
+
                 // Create popup
                 const popup = document.createElement('div');
                 popup.textContent = 'Copied!';
@@ -124,16 +131,16 @@
                 popup.style.zIndex = '999999';
                 popup.style.opacity = '1';
                 popup.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                
+
                 document.body.appendChild(popup);
                 console.log('Popup created and added to body');
-                
+
                 // Fade out after 1.5 seconds
                 setTimeout(() => {
                     popup.style.opacity = '0';
                     popup.style.transform = 'translateX(-50%) translateY(-10px)';
                 }, 1500);
-                
+
                 // Remove after animation
                 setTimeout(() => {
                     popup.remove();
@@ -146,4 +153,5 @@
     </script>
     <script src="js/carousel-3d.js"></script>
 </body>
+
 </html>

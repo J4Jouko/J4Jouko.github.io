@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=EB+Garamond:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap');
 
 html, body {
     height: auto;
@@ -14,37 +14,199 @@ body {
 .games-project-page {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 4rem;
+    padding: 3rem 2rem 6rem;
     color: #dfe7f5;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'EB Garamond', Georgia, serif;
 }
 
+/* ============================================
+   SECTIONS & TITLES
+   ============================================ */
+
 .game-section {
-    margin-bottom: 4rem;
+    margin-bottom: 5.5rem;
 }
 
 .section-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 2.1rem;
-    letter-spacing: 0.04em;
+    position: relative;
+    display: inline-block;
+    font-family: 'Cinzel', 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 2.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #e6d18c;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0.15em;
+    right: 0.15em;
+    bottom: -0.6rem;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(214, 198, 122, 0.85) 20%, rgba(214, 198, 122, 0.85) 80%, transparent);
+}
+
+.subsection-title {
+    font-family: 'Cinzel', 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: #d7c67a;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1.35rem;
 }
 
 .section-intro {
-    max-width: 900px;
     color: #c8d5eb;
-    line-height: 1.75;
+    font-size: 1.22rem;
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
-.game-hero {
+.section-intro:last-of-type {
+    margin-bottom: 2.25rem;
+}
+
+.section-intro strong {
+    color: #f2f6ff;
+    font-weight: 700;
+}
+
+/* ============================================
+   ORNAMENTAL CORNERS (shared)
+   ============================================ */
+
+.game-hero,
+.info-panel,
+.media-card,
+.image-showcase,
+.contrib-card,
+.post-card {
     position: relative;
+}
+
+/*
+   The ornament PNGs aren't drawn flush to their own canvas edge: the gold
+   line sits ~16-17% in from the top/side, with the scroll flourish
+   overshooting above/outside it. Sizing each pseudo-element to the image's
+   exact aspect ratio (W x 0.3547W) and offsetting it by that same fraction
+   pulls the *line* onto the panel's real border instead of floating inside it.
+*/
+.game-hero::before,
+.game-hero::after,
+.info-panel::before,
+.info-panel::after,
+.media-card::before,
+.media-card::after,
+.contrib-card::before,
+.contrib-card::after,
+.post-card::before,
+.post-card::after {
+    content: '';
+    position: absolute;
+    width: 84px;
+    height: 29.8px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0.92;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.game-hero::before,
+.info-panel::before,
+.media-card::before,
+.contrib-card::before,
+.post-card::before {
+    top: -4.9px;
+    left: -2.98px;
+    background-image: url('../assets/art/Deilist/Corner_Ornament_coin_haut_gauche.png');
+}
+
+.game-hero::after,
+.info-panel::after,
+.media-card::after,
+.contrib-card::after,
+.post-card::after {
+    top: -5.09px;
+    right: -3.17px;
+    background-image: url('../assets/art/Deilist/Corner_Ornament_coin_bas_droit.png');
+    transform: scaleY(-1);
+}
+
+/*
+   image-showcase boxes run much wider than the panels above (up to
+   ~1100px), so the shared 84px corner accent all but disappears against
+   busy artwork. Give it its own larger, higher-contrast size instead of
+   scaling with the box.
+*/
+.image-showcase::before,
+.image-showcase::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 49.66px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 1;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+}
+
+.image-showcase::before {
+    top: -8.17px;
+    left: -4.97px;
+    background-image: url('../assets/art/Deilist/Corner_Ornament_coin_haut_gauche.png');
+}
+
+.image-showcase::after {
+    top: -8.49px;
+    right: -5.29px;
+    background-image: url('../assets/art/Deilist/Corner_Ornament_coin_bas_droit.png');
+    transform: scaleY(-1);
+}
+
+.contrib-card::before,
+.contrib-card::after,
+.post-card::before,
+.post-card::after {
+    width: 68px;
+    height: 24.11px;
+}
+
+.contrib-card::before,
+.post-card::before {
+    top: -3.97px;
+    left: -2.41px;
+}
+
+.contrib-card::after,
+.post-card::after {
+    top: -4.12px;
+    right: -2.57px;
+}
+
+/* ============================================
+   HERO BANNER
+   ============================================ */
+
+.game-hero {
     min-height: 56vh;
-    border: 1px solid rgba(192, 205, 233, 0.2);
-    border-radius: 18px;
-    overflow: hidden;
-    margin-bottom: 2rem;
+    border: 1px solid rgba(214, 198, 122, 0.32);
+    border-radius: 6px;
+    margin-bottom: 2.5rem;
     background: #0e1737;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(214, 198, 122, 0.08);
 }
 
 .game-hero img {
@@ -53,13 +215,14 @@ body {
     object-fit: cover;
     position: absolute;
     inset: 0;
+    border-radius: 6px;
     filter: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    padding: 2rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -67,133 +230,168 @@ body {
 }
 
 .hero-title {
-    font-family: 'EB Garamond', serif;
-    font-size: clamp(2.2rem, 5vw, 4.2rem);
-    line-height: 0.95;
+    font-family: 'Cinzel', 'EB Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: clamp(2rem, 4.6vw, 3.6rem);
+    line-height: 1.1;
     color: #e6dc9c;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .hero-tag {
     display: inline-flex;
     align-self: flex-start;
-    padding: 0.45rem 0.75rem;
-    border-radius: 999px;
-    background: rgba(130, 146, 206, 0.16);
-    border: 1px solid rgba(167, 184, 226, 0.35);
-    color: #dae6ff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: linear-gradient(160deg, rgba(41, 33, 12, 0.55), rgba(15, 21, 48, 0.75));
+    border: 1px solid rgba(214, 198, 122, 0.45);
+    color: #e9dfb8;
+    font-family: 'Cinzel', 'EB Garamond', serif;
     font-weight: 600;
-    letter-spacing: 0.03em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
+/* ============================================
+   INFO PANEL & GRID
+   ============================================ */
+
 .info-panel {
-    border: 1px solid rgba(166, 181, 216, 0.22);
-    border-radius: 16px;
-    background: linear-gradient(160deg, rgba(24, 38, 84, 0.68), rgba(17, 27, 62, 0.92));
-    padding: 1.25rem;
+    border: 1px solid rgba(214, 198, 122, 0.28);
+    border-radius: 6px;
+    background: linear-gradient(160deg, rgba(24, 32, 68, 0.72), rgba(12, 16, 38, 0.94));
+    padding: 2.25rem 2.5rem;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(214, 198, 122, 0.06);
+}
+
+.info-panel .section-intro {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .software-used {
-    margin-bottom: 1rem;
+    margin-bottom: 1.75rem;
 }
 
 .software-used__label {
     display: inline-block;
-    font-size: 0.75rem;
+    font-family: 'Cinzel', 'EB Garamond', serif;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: #a6b5da;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.14em;
+    color: #b9ab72;
+    margin-bottom: 0.85rem;
 }
 
 .software-used__logos {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.65rem;
 }
 
 .software-used__logos img {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
-    padding: 0.2rem;
-    border-radius: 8px;
-    background: rgba(11, 17, 43, 0.72);
-    border: 1px solid rgba(168, 183, 217, 0.25);
+    padding: 0.3rem;
+    border-radius: 4px;
+    background: rgba(8, 12, 30, 0.75);
+    border: 1px solid rgba(196, 175, 112, 0.3);
 }
 
 .software-used__engine {
     display: inline-flex;
     align-items: center;
-    padding: 0.32rem 0.62rem;
-    border-radius: 999px;
-    border: 1px solid rgba(168, 183, 217, 0.35);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid rgba(196, 175, 112, 0.4);
     background: rgba(11, 17, 43, 0.6);
     color: #dce7ff;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
 .info-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .info-item {
-    background: rgba(11, 17, 43, 0.6);
-    border: 1px solid rgba(168, 183, 217, 0.2);
-    border-radius: 12px;
-    padding: 0.75rem;
+    background: rgba(9, 13, 34, 0.65);
+    border: 1px solid rgba(196, 175, 112, 0.22);
+    border-radius: 4px;
+    padding: 1.1rem 1.25rem;
 }
 
 .info-label {
     display: block;
-    font-size: 0.75rem;
+    font-family: 'Cinzel', 'EB Garamond', serif;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #a0afd1;
-    margin-bottom: 0.35rem;
+    letter-spacing: 0.1em;
+    color: #a89a68;
+    margin-bottom: 0.55rem;
 }
 
 .info-value {
     color: #e8eefc;
-    font-size: 0.95rem;
-    line-height: 1.45;
+    font-size: 1.08rem;
+    line-height: 1.55;
 }
 
 .team-breakdown {
-    margin-top: 1rem;
-    max-width: 520px;
-    padding: 0.9rem 1rem;
+    margin-top: 2rem;
+    max-width: 580px;
+    padding: 1.25rem 1.5rem;
     border-left: 3px solid #d7c67a;
     background: rgba(8, 12, 33, 0.5);
-    border-radius: 8px;
+    border-radius: 0 4px 4px 0;
 }
 
 .team-breakdown h3 {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Cinzel', 'EB Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: #d7c67a;
-    margin-bottom: 0.4rem;
-    font-size: 1.15rem;
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
 }
 
+.team-breakdown p {
+    color: #c8d5eb;
+    font-size: 1.08rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   MEDIA CARDS & TRAILER
+   ============================================ */
+
 .media-card {
-    border: 1px solid rgba(171, 186, 224, 0.22);
-    border-radius: 16px;
-    background: rgba(9, 14, 35, 0.7);
-    padding: 1rem;
+    border: 1px solid rgba(214, 198, 122, 0.28);
+    border-radius: 6px;
+    background: rgba(9, 14, 35, 0.75);
+    padding: 2.25rem 2.5rem;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(214, 198, 122, 0.06);
 }
 
 .trailer-frame {
     aspect-ratio: 16 / 9;
-    border-radius: 12px;
+    border-radius: 4px;
     overflow: hidden;
-    border: 1px solid rgba(171, 186, 224, 0.28);
+    border: 1px solid rgba(214, 198, 122, 0.32);
     background: linear-gradient(145deg, #131f48, #090f29);
     display: grid;
     place-items: center;
+    margin-top: 1.75rem;
 }
 
 .trailer-frame iframe {
@@ -205,20 +403,32 @@ body {
 .trailer-placeholder {
     text-align: center;
     color: #ccd8ef;
-    padding: 1rem;
-    line-height: 1.6;
+    padding: 2rem;
+    line-height: 1.75;
 }
 
-.carousel-wrap {
+.trailer-placeholder a {
+    display: inline-block;
     margin-top: 1rem;
+    color: #f0ce7a;
+    font-weight: 600;
+}
+
+/* ============================================
+   CAROUSEL
+   ============================================ */
+
+.carousel-wrap {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .carousel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.8rem;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .carousel-header p {
@@ -227,41 +437,71 @@ body {
 
 .carousel-controls {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.65rem;
 }
 
 .carousel-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 999px;
-    border: 1px solid rgba(169, 183, 214, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(196, 175, 112, 0.5);
     background: rgba(18, 29, 66, 0.85);
     color: #e6edff;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
 .carousel-btn:hover {
     border-color: #f0ce7a;
     color: #f0ce7a;
+    transform: scale(1.05);
 }
 
 .media-carousel {
     display: flex;
-    gap: 0.9rem;
+    gap: 1.25rem;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    padding-bottom: 0.6rem;
+    padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: #d7ab5c rgba(9, 14, 35, 0.4);
+}
+
+.media-carousel::-webkit-scrollbar {
+    height: 20px;
+}
+
+.media-carousel::-webkit-scrollbar-track {
+    background: rgba(9, 14, 35, 0.4);
+    border-radius: 999px;
+    margin: 0 4px;
+}
+
+.media-carousel::-webkit-scrollbar-thumb {
+    background-image: url('../assets/art/Deilist/DpsCheck_Bar.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 999px;
+}
+
+.media-carousel::-webkit-scrollbar-thumb:hover {
+    filter: brightness(1.12);
 }
 
 .media-slide {
-    flex: 0 0 min(80vw, 720px);
+    flex: 0 0 min(80vw, 740px);
     scroll-snap-align: start;
-    border-radius: 14px;
+    border-radius: 4px;
     overflow: hidden;
-    border: 1px solid rgba(165, 181, 216, 0.25);
+    border: 1px solid rgba(196, 175, 112, 0.3);
     background: #0f1739;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
 .media-slide img {
@@ -269,90 +509,154 @@ body {
     height: 100%;
     display: block;
     object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.45s ease;
 }
 
+.media-slide:hover img {
+    transform: scale(1.06);
+}
+
+/* ============================================
+   SPLIT CALLOUT & CONTRIBUTIONS
+   ============================================ */
+
 .split-callout {
-    border-top: 1px solid rgba(191, 203, 230, 0.3);
-    border-bottom: 1px solid rgba(191, 203, 230, 0.3);
-    margin: 4rem 0;
-    padding: 2rem 0;
+    position: relative;
+    border-top: 1px solid rgba(214, 198, 122, 0.35);
+    border-bottom: 1px solid rgba(214, 198, 122, 0.35);
+    margin: 5.5rem 0;
+    padding: 3.5rem 0;
 }
 
 .contrib-grid,
 .postmortem-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 1.75rem;
+    margin-top: 2.25rem;
 }
 
 .contrib-card,
 .post-card {
-    padding: 1rem 1.1rem;
-    background: rgba(11, 16, 40, 0.56);
-    border-radius: 12px;
+    padding: 1.9rem 2.1rem;
+    background: rgba(10, 15, 38, 0.62);
+    border-radius: 6px;
+    border: 1px solid rgba(196, 175, 112, 0.24);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
 .contrib-card h3,
 .post-card h3 {
     color: #d7c67a;
-    font-family: 'EB Garamond', serif;
-    font-size: 1.25rem;
-    margin-bottom: 0.7rem;
+    font-family: 'Cinzel', 'EB Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1.1rem;
+    margin-bottom: 1.3rem;
 }
 
 .clean-list {
     margin: 0;
-    padding-left: 1.1rem;
+    padding-left: 1.65rem;
     color: #d6e0f6;
-    line-height: 1.7;
+    font-size: 1.14rem;
+    line-height: 1.85;
+    text-align: justify;
+    text-justify: inter-word;
+    list-style: none;
+}
+
+.clean-list li {
+    position: relative;
+}
+
+.clean-list li::before {
+    content: '';
+    position: absolute;
+    left: -1.65rem;
+    top: 0.42em;
+    width: 15px;
+    height: 15px;
+    background: url('../assets/art/Deilist/Star.png') no-repeat center / contain;
 }
 
 .clean-list li + li {
-    margin-top: 0.35rem;
+    margin-top: 0.65rem;
 }
 
+.clean-list strong {
+    color: #f2f6ff;
+}
+
+/* ============================================
+   IMAGE SHOWCASE & BREAKDOWN
+   ============================================ */
+
 .image-showcase {
-    border: 1px solid rgba(171, 186, 224, 0.22);
-    border-radius: 14px;
+    position: relative;
+    border: 1px solid rgba(214, 198, 122, 0.3);
+    border-radius: 4px;
     overflow: hidden;
     background: #0f1739;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
 }
 
 .image-showcase img {
     width: 100%;
     display: block;
+    cursor: zoom-in;
+    transition: transform 0.45s ease;
+}
+
+.image-showcase:hover img {
+    transform: scale(1.045);
+}
+
+.breakdown-details {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .breakdown-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
     align-items: start;
+    margin-top: 2rem;
 }
 
 .breakdown-switcher {
     display: inline-flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 0.9rem;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .breakdown-switch-btn {
-    min-width: 52px;
-    padding: 0.4rem 0.7rem;
-    border-radius: 999px;
-    border: 1px solid rgba(169, 183, 214, 0.55);
+    min-width: 56px;
+    padding: 0.5rem 1.05rem;
+    border-radius: 4px;
+    border: 1px solid rgba(196, 175, 112, 0.5);
     background: rgba(18, 29, 66, 0.85);
     color: #dce7ff;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-family: 'Cinzel', 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .breakdown-switch-btn:hover {
     border-color: #f0ce7a;
     color: #f0ce7a;
+    transform: translateY(-1px);
 }
 
 .breakdown-switch-btn.is-active {
@@ -362,66 +666,166 @@ body {
 }
 
 .note-line {
-    margin-top: 0.8rem;
+    margin-top: 1.5rem;
     color: #d7c67a;
-    font-weight: 600;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.12rem;
+    line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .closeup-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.8rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .closeup-grid img {
     width: 100%;
-    border-radius: 10px;
-    border: 1px solid rgba(171, 186, 224, 0.22);
+    border-radius: 4px;
+    border: 1px solid rgba(214, 198, 122, 0.3);
 }
 
 .section-divider {
+    position: relative;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(214, 198, 122, 0.8), transparent);
-    margin: 3rem 0;
+    margin: 5rem 0;
 }
 
+.section-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background: url('../assets/art/Deilist/Star.png') no-repeat center / contain;
+}
+
+/* ============================================
+   OUTRO SECTION
+   ============================================ */
+
 .project-outro {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
+    margin-top: 4.5rem;
+    padding-top: 3rem;
     border-top: 1px solid rgba(214, 198, 122, 0.35);
+    text-align: center;
 }
 
 .project-outro__thanks {
     font-family: 'Caveat', cursive;
-    font-size: clamp(1.9rem, 3.8vw, 2.4rem);
+    font-size: clamp(2rem, 4vw, 2.6rem);
     font-weight: 700;
     color: #e0d39a;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.75rem;
 }
 
 .project-outro__itch {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
-    border: 1px solid rgba(234, 162, 165, 0.55);
-    background: rgba(234, 162, 165, 0.12);
-    border-radius: 999px;
-    padding: 0.58rem 1rem;
-    color: #f1d1d1;
+    gap: 0.75rem;
+    border: 1px solid rgba(214, 198, 122, 0.55);
+    background: rgba(214, 198, 122, 0.1);
+    border-radius: 4px;
+    padding: 0.75rem 1.6rem;
+    color: #f1e6c4;
     text-decoration: none;
+    font-family: 'Cinzel', 'EB Garamond', serif;
     font-weight: 600;
+    font-size: 0.98rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: all 0.25s ease;
 }
 
 .project-outro__itch i {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 
 .project-outro__itch:hover {
     border-color: #f4c072;
     color: #ffdba3;
+    background: rgba(214, 198, 122, 0.2);
+    transform: translateY(-2px);
 }
+
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+
+body.lightbox-locked {
+    overflow: hidden;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 4vw;
+    background: rgba(6, 9, 24, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.lightbox-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 88vh;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid rgba(214, 198, 122, 0.4);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    transform: scale(0.96);
+    transition: transform 0.25s ease;
+}
+
+.lightbox-overlay.is-open img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.75rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    border: 1px solid rgba(214, 198, 122, 0.5);
+    background: rgba(15, 21, 48, 0.85);
+    color: #e9dfb8;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.lightbox-close:hover {
+    border-color: #f0ce7a;
+    color: #f0ce7a;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   RESPONSIVENESS
+   ============================================ */
 
 @media (max-width: 980px) {
     .info-grid,
@@ -429,27 +833,137 @@ body {
     .postmortem-grid,
     .breakdown-grid {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 
     .hero-content {
-        padding: 1.3rem;
+        padding: 1.75rem;
+    }
+
+    .info-panel,
+    .media-card {
+        padding: 1.5rem;
+    }
+
+    .game-hero::before,
+    .info-panel::before,
+    .media-card::before,
+    .game-hero::after,
+    .info-panel::after,
+    .media-card::after {
+        width: 62px;
+        height: 22px;
+    }
+
+    .game-hero::before,
+    .info-panel::before,
+    .media-card::before {
+        top: -3.62px;
+        left: -2.2px;
+    }
+
+    .game-hero::after,
+    .info-panel::after,
+    .media-card::after {
+        top: -3.76px;
+        right: -2.34px;
+    }
+
+    .image-showcase::before,
+    .image-showcase::after {
+        width: 110px;
+        height: 39.02px;
+    }
+
+    .image-showcase::before {
+        top: -6.42px;
+        left: -3.9px;
+    }
+
+    .image-showcase::after {
+        top: -6.67px;
+        right: -4.15px;
     }
 }
 
 @media (max-width: 640px) {
     .games-project-page {
-        padding: 1.4rem 0.85rem 3rem;
+        padding: 1.5rem 1rem 4rem;
     }
 
     .game-section {
-        margin-bottom: 2.8rem;
+        margin-bottom: 3.5rem;
     }
 
     .section-title {
-        font-size: 1.7rem;
+        font-size: 1.55rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .subsection-title {
+        font-size: 1.2rem;
+        margin-top: 2rem;
     }
 
     .media-slide {
         flex-basis: 88vw;
+    }
+
+    .closeup-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-outro__itch {
+        padding: 0.65rem 1.1rem;
+        font-size: 0.85rem;
+    }
+
+    .game-hero::before,
+    .info-panel::before,
+    .media-card::before,
+    .contrib-card::before,
+    .post-card::before,
+    .game-hero::after,
+    .info-panel::after,
+    .media-card::after,
+    .contrib-card::after,
+    .post-card::after {
+        width: 54px;
+        height: 19.15px;
+    }
+
+    .game-hero::before,
+    .info-panel::before,
+    .media-card::before,
+    .contrib-card::before,
+    .post-card::before {
+        top: -3.15px;
+        left: -1.92px;
+    }
+
+    .game-hero::after,
+    .info-panel::after,
+    .media-card::after,
+    .contrib-card::after,
+    .post-card::after {
+        top: -3.27px;
+        right: -2.04px;
+    }
+
+    .image-showcase::before,
+    .image-showcase::after {
+        width: 80px;
+        height: 28.38px;
+    }
+
+    .image-showcase::before {
+        top: -4.67px;
+        left: -2.84px;
+    }
+
+    .image-showcase::after {
+        top: -4.85px;
+        right: -3.02px;
     }
 }

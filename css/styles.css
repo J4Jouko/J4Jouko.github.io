@@ -393,6 +393,15 @@ body {
     margin-bottom: var(--spacing-sm);
     color: #E5EDF7;
     font-family: 'Cinzel', serif;
+    min-height: 2.6em;
+    line-height: 1.3;
+}
+
+.project-subtitle {
+    font-size: var(--font-sm);
+    color: #BAC4E5;
+    margin-bottom: 0.45rem;
+    font-weight: 500;
 }
 
 .project-date {
@@ -571,6 +580,8 @@ body {
 
 .firefly {
     position: fixed;
+    top: 0;
+    left: 0;
     pointer-events: none;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, #FFD5E5, #EAA2A5 60%, #7c3aed);
@@ -579,6 +590,6 @@ body {
         0 0 20px #AE779C,
         0 0 30px #7c3aed;
     filter: blur(1px);
-    z-index: 1;
+    z-index: 50;
     /* animation is now handled by JS for interactivity */
 }
