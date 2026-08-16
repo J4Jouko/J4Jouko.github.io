@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy Bear - Portfolio</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <script src="../../js/fireflies.js"></script>
+    <style>
+        .project-main-title,
+        .block-text h2 {
+            font-family: 'Cinzel', serif;
+        }
+        /* Keep image and text close together, centered as a pair, instead of
+           the image stretching to fill all the leftover flex space. */
+        @media (min-width: 769px) {
+            .content-block {
+                gap: var(--spacing-lg);
+            }
+            .block-image {
+                flex: 0 1 auto;
+            }
+            .block-text {
+                flex: 0 1 560px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Portfolio | Juliette Joukowski</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../games.html" class="nav-link">Games</a></li>
+                <li class="nav-item"><a href="../art.html" class="nav-link active">Art</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content (Scrollable Body) -->
+    <main class="project-page">
+
+        <!-- Banner Section -->
+        <header class="project-banner">
+            <div class="banner-image">
+                <img src="../../assets/art/TeddyBear/bear_cover.png" alt="Teddy Bear cover art">
+            </div>
+            <div class="banner-model-layer">
+                <img src="../../assets/art/TeddyBear/bear_cover.png" alt="Teddy Bear cover art">
+            </div>
+        </header>
+
+        <!-- Staggered Content Grid -->
+        <div class="project-content-grid">
+
+            <!-- Block 1: Image Left, Text Right -->
+            <section class="content-block">
+                <div class="block-image">
+                    <img src="../../assets/art/TeddyBear/bear_concept.png" alt="Teddy Bear concept art and iterations">
+                </div>
+                <div class="block-text">
+                    <h2>Concept to Final Design</h2>
+                    <p>This Teddy Bear is another original character created for <strong>Whispers of the Dollhouse</strong>, the same local couch-multiplayer school project as Voodoo Ragdoll. A few outfit iterations were explored before settling on this worn, adventurer-style bear with a stitched vest and a small charm.</p>
+                    <div class="tools-inline" aria-label="Software used">
+                        <img src="../../assets/logo/zbrush_logo_white.png" alt="ZBrush">
+                        <img src="../../assets/logo/substance_painter_logo.png" alt="Substance 3D Painter">
+                        <img src="../../assets/logo/unity-icon-1.jpg" alt="Unity" style="border-radius:8px;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Block 2: Text Left, Image Right -->
+            <section class="content-block">
+                <div class="block-image">
+                    <img src="../../assets/art/TeddyBear/bear_turn.png" alt="Teddy Bear high poly sculpt turnaround">
+                </div>
+                <div class="block-text">
+                    <h2>High Poly Sculpt</h2>
+                    <p>Full turnaround of the high poly sculpt, modeled in ZBrush. The fur, stitched vest and floppy ears were sculpted to keep a soft, huggable silhouette.</p>
+                </div>
+            </section>
+
+            <!-- Block 3: Image Left, Text Right -->
+            <section class="content-block">
+                <div class="block-image">
+                    <img src="../../assets/art/TeddyBear/bear_turn_txt.png" alt="Teddy Bear textured turnaround">
+                </div>
+                <div class="block-text">
+                    <h2>Texturing</h2>
+                    <p>Final PBR texturing created in Substance 3D Painter, with hand-placed fur strokes, leather straps and a slightly faded, well-loved look.</p>
+                </div>
+            </section>
+
+            <!-- Block 4: Text Left, Image Right -->
+            <section class="content-block">
+                <div class="block-image">
+                    <img src="../../assets/art/TeddyBear/bear_hp_lp_wireframe.png" alt="Teddy Bear high poly, low poly and wireframe comparison">
+                </div>
+                <div class="block-text">
+                    <h2>Retopology &amp; Optimization</h2>
+                    <p>High poly, low poly and wireframe comparison. The mesh was retopologized and optimized for real-time use in the game.</p>
+                </div>
+            </section>
+
+            <!-- Block 5: Image Left, Text Right -->
+            <section class="content-block">
+                <div class="block-image">
+                    <img src="../../assets/art/Voodoo_Ragdoll/poster_whispers_of_the_dollhouse.png" alt="Whispers of the Dollhouse game poster">
+                </div>
+                <div class="block-text">
+                    <h2>In-Game Integration</h2>
+                    <p>Like Voodoo Ragdoll, the Teddy Bear was integrated into <strong>Whispers of the Dollhouse</strong> using Unity, playable in local split-screen multiplayer.</p>
+                    <img src="../../assets/art/Voodoo_Ragdoll/TeamUp-ingame_gif.gif" alt="Whispers of the Dollhouse gameplay footage" class="block-logo" style="border-radius:8px;">
+                    <p class="thanks-message">Thank you for looking!</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://www.linkedin.com/in/juliette-joukowski" class="footer-link" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://jouka.itch.io/" class="footer-link" target="_blank" title="Itch.io">
+                <i class="fab fa-itch-io"></i>
+            </a>
+            <a href="../../assets/JOUKOWSKI_Juliette_CV_2026_.pdf" class="footer-link" target="_blank" title="Download CV">
+                <i class="fas fa-file-pdf"></i>
+            </a>
+            <a href="#" class="footer-link" title="Copy email" onclick="copyEmail(event)">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </footer>
+    <script>
+        function copyEmail(event) {
+            event.preventDefault();
+            const link = event.currentTarget;
+            const rect = link.getBoundingClientRect();
+            const email = 'juliette.joukowski@gmail.com';
+
+            navigator.clipboard.writeText(email).then(() => {
+                const popup = document.createElement('div');
+                popup.textContent = 'Copied!';
+                popup.style.position = 'fixed';
+                popup.style.top = (rect.top - 50) + 'px';
+                popup.style.left = (rect.left + rect.width / 2) + 'px';
+                popup.style.transform = 'translateX(-50%)';
+                popup.style.background = 'transparent';
+                popup.style.color = '#E99897';
+                popup.style.padding = '10px 20px';
+                popup.style.borderRadius = '8px';
+                popup.style.fontFamily = 'Caveat, cursive';
+                popup.style.fontSize = '1.8rem';
+                popup.style.fontWeight = 'bold';
+                popup.style.pointerEvents = 'none';
+                popup.style.zIndex = '999999';
+                popup.style.opacity = '1';
+                popup.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+                document.body.appendChild(popup);
+
+                setTimeout(() => {
+                    popup.style.opacity = '0';
+                    popup.style.transform = 'translateX(-50%) translateY(-10px)';
+                }, 1500);
+
+                setTimeout(() => {
+                    popup.remove();
+                }, 2000);
+            });
+        }
+    </script>
+    <script src="../../js/project.js"></script>
+</body>
+</html>

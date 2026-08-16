@@ -452,6 +452,35 @@ model-viewer {
     transform: translateY(-2px);
 }
 
+/* Inline software/tools row, used within block-text instead of the banner */
+.tools-inline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 1.5rem;
+}
+
+.tools-inline img {
+    height: 42px;
+    width: auto;
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tools-inline img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.credit-line {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #9aa2b1;
+    font-style: italic;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .content-block, 
