@@ -27,6 +27,15 @@
                 flex: 0 1 560px;
             }
         }
+        /* The doll rises slowly into frame instead of the default gentle zoom,
+           like she's sneaking up to give you a scare. */
+        @keyframes ragdollRise {
+            0% { transform: translateY(20%); }
+            100% { transform: translateY(0); }
+        }
+        .banner-model-layer img {
+            animation: ragdollRise 3.5s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+        }
     </style>
 </head>
 <body>
@@ -49,10 +58,27 @@
         <!-- Banner Section -->
         <header class="project-banner">
             <div class="banner-image">
-                <img src="../../assets/art/Voodoo_Ragdoll/ragdoll_main.png" alt="Voodoo Ragdoll cover art">
+                <img src="../../assets/art/Voodoo_Ragdoll/bockgrou_ragdollnd.png" alt="Voodoo Ragdoll background">
             </div>
             <div class="banner-model-layer">
-                <img src="../../assets/art/Voodoo_Ragdoll/ragdoll_main.png" alt="Voodoo Ragdoll cover art">
+                <img src="../../assets/art/Voodoo_Ragdoll/bockgrou_ragdollnd_up.png" alt="Voodoo Ragdoll 3D character">
+            </div>
+            <div class="project-tools banner-tools">
+                <img src="../../assets/logo/zbrush_logo_white.png" alt="ZBrush">
+                <img src="../../assets/logo/substance_painter_logo.png" alt="Substance 3D Painter">
+                <img src="../../assets/logo/unity-icon-1.jpg" alt="Unity" style="border-radius:8px;">
+            </div>
+            <div class="banner-overlay">
+                <div class="banner-content">
+                    <h1 class="project-main-title">VOODOO<br>RAGDOLL</h1>
+                    <div class="project-meta">
+                        <div class="project-meta-text">2024 | School Project — IIM Paris</div>
+                    </div>
+                    <p class="project-subtitle">Original Character — Whispers of the Dollhouse</p>
+                    <p class="project-description">
+                        A creepy-cute textile doll created for <strong>Whispers of the Dollhouse</strong>, a local couch-multiplayer game developed as a school project at IIM Paris. <br> Modeled and textured in ZBrush and Substance 3D Painter, then integrated in Unity.
+                    </p>
+                </div>
             </div>
         </header>
 
@@ -67,11 +93,6 @@
                 <div class="block-text">
                     <h2>Concept to Final Design</h2>
                     <p>Voodoo Ragdoll is an original character concept created for <strong>Whispers of the Dollhouse</strong>, a local couch-multiplayer game developed as a school project at IIM Paris. Several iterations were explored before settling on this creepy-cute rag doll, with button eyes, stitched fabric skin and a torn plaid dress.</p>
-                    <div class="tools-inline" aria-label="Software used">
-                        <img src="../../assets/logo/zbrush_logo_white.png" alt="ZBrush">
-                        <img src="../../assets/logo/substance_painter_logo.png" alt="Substance 3D Painter">
-                        <img src="../../assets/logo/unity-icon-1.jpg" alt="Unity" style="border-radius:8px;">
-                    </div>
                 </div>
             </section>
 

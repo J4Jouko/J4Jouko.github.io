@@ -27,6 +27,23 @@
                 flex: 0 1 560px;
             }
         }
+        /* Three floating bears, each gently bobbing/zooming out of sync
+           instead of the single default gentle zoom, for a little levitation. */
+        @keyframes bearFloat1 {
+            0%, 100% { transform: translate(0, 0) rotate(-2deg) scale(1); }
+            50% { transform: translate(-8px, -22px) rotate(2deg) scale(1.04); }
+        }
+        @keyframes bearFloat2 {
+            0%, 100% { transform: translate(0, 0) rotate(1deg) scale(1); }
+            50% { transform: translate(10px, -16px) rotate(-3deg) scale(1.05); }
+        }
+        @keyframes bearFloat3 {
+            0%, 100% { transform: translate(0, 0) rotate(4deg) scale(1); }
+            50% { transform: translate(-10px, -14px) rotate(-1deg) scale(1.06); }
+        }
+        .bear-float-1 img { animation: bearFloat1 7s ease-in-out infinite; }
+        .bear-float-2 img { animation: bearFloat2 8.5s ease-in-out infinite; animation-delay: -2s; }
+        .bear-float-3 img { animation: bearFloat3 6.5s ease-in-out infinite; animation-delay: -4s; }
     </style>
 </head>
 <body>
@@ -49,10 +66,33 @@
         <!-- Banner Section -->
         <header class="project-banner">
             <div class="banner-image">
-                <img src="../../assets/art/TeddyBear/bear_cover.png" alt="Teddy Bear cover art">
+                <img src="../../assets/art/TeddyBear/bear_background.png" alt="Teddy Bear background">
             </div>
-            <div class="banner-model-layer">
-                <img src="../../assets/art/TeddyBear/bear_cover.png" alt="Teddy Bear cover art">
+            <div class="banner-model-layer bear-float-1">
+                <img src="../../assets/art/TeddyBear/bear_background_1.png" alt="Floating Teddy Bear">
+            </div>
+            <div class="banner-model-layer bear-float-2">
+                <img src="../../assets/art/TeddyBear/bear_background_2.png" alt="Floating Teddy Bear">
+            </div>
+            <div class="banner-model-layer bear-float-3">
+                <img src="../../assets/art/TeddyBear/bear_background_3.png" alt="Floating Teddy Bear">
+            </div>
+            <div class="project-tools banner-tools">
+                <img src="../../assets/logo/zbrush_logo_white.png" alt="ZBrush">
+                <img src="../../assets/logo/substance_painter_logo.png" alt="Substance 3D Painter">
+                <img src="../../assets/logo/unity-icon-1.jpg" alt="Unity" style="border-radius:8px;">
+            </div>
+            <div class="banner-overlay">
+                <div class="banner-content">
+                    <h1 class="project-main-title">TEDDY<br>BEAR</h1>
+                    <div class="project-meta">
+                        <div class="project-meta-text">2024 | School Project — IIM Paris</div>
+                    </div>
+                    <p class="project-subtitle">Original Character — Whispers of the Dollhouse</p>
+                    <p class="project-description">
+                        Another original character created for <strong>Whispers of the Dollhouse</strong>, the same couch-multiplayer school project as Voodoo Ragdoll. <br> Modeled and textured in ZBrush and Substance 3D Painter, then integrated in Unity.
+                    </p>
+                </div>
             </div>
         </header>
 
@@ -67,11 +107,6 @@
                 <div class="block-text">
                     <h2>Concept to Final Design</h2>
                     <p>This Teddy Bear is another original character created for <strong>Whispers of the Dollhouse</strong>, the same local couch-multiplayer school project as Voodoo Ragdoll. A few outfit iterations were explored before settling on this worn, adventurer-style bear with a stitched vest and a small charm.</p>
-                    <div class="tools-inline" aria-label="Software used">
-                        <img src="../../assets/logo/zbrush_logo_white.png" alt="ZBrush">
-                        <img src="../../assets/logo/substance_painter_logo.png" alt="Substance 3D Painter">
-                        <img src="../../assets/logo/unity-icon-1.jpg" alt="Unity" style="border-radius:8px;">
-                    </div>
                 </div>
             </section>
 
