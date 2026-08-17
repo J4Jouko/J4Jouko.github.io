@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enthaur: Lost in Slumber - Portfolio</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/games-template.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../../js/fireflies.js"></script>
+    <style>
+        /* Taller hero so more of the key art is visible, biased to reveal
+           more of the bottom of the image instead of the default center crop. */
+        .game-hero {
+            min-height: 78vh;
+        }
+        .game-hero img {
+            object-position: center 68%;
+        }
+
+        /* Two parasite GIFs shown small, side by side, instead of in the
+           horizontal-scroll carousel used for screenshots. */
+        .gif-duo {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .gif-duo figure {
+            flex: 1 1 0;
+            margin: 0;
+            border: 1px solid rgba(214, 198, 122, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
+            background: #0f1739;
+        }
+        .gif-duo img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Portfolio | Juliette Joukowski</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../games.html" class="nav-link active">Games</a></li>
+                <li class="nav-item"><a href="../art.html" class="nav-link">Art</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <a href="../games.html" class="project-back-btn" aria-label="Back" title="Back" onclick="if (window.history.length > 1) { history.back(); return false; }">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <main class="games-project-page">
+        <section class="game-section">
+            <header class="game-hero">
+                <img
+                    src="../../assets/art/Enthaur/key_art_horizontal.png"
+                    alt="Enthaur: Lost in Slumber key art">
+            </header>
+
+            <div class="info-panel">
+                <div class="software-used" aria-label="Software used on this project">
+                    <span class="software-used__label">Software used</span>
+                    <div class="software-used__logos">
+                        <img src="../../assets/logo/zbrush_logo_white.png" alt="ZBrush">
+                        <img src="../../assets/logo/blender_logo.png" alt="Blender">
+                        <img src="../../assets/logo/Adobe_Photoshop_CC_icon.svg.png" alt="Adobe Photoshop">
+                        <img src="../../assets/logo/substance_painter_logo.png" alt="Substance 3D Painter">
+                        <img src="../../assets/logo/unity-icon_b.png" alt="Unity">
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <article class="info-item">
+                        <span class="info-label">Project</span>
+                        <p class="info-value">Student Game Project · Adventure · First-Person Exploration</p>
+                    </article>
+                    <article class="info-item">
+                        <span class="info-label">Duration</span>
+                        <p class="info-value">5 months</p>
+                    </article>
+                    <article class="info-item">
+                        <span class="info-label">Team</span>
+                        <p class="info-value">15 people</p>
+                    </article>
+                    <article class="info-item">
+                        <span class="info-label">Role</span>
+                        <p class="info-value">3D Artist</p>
+                    </article>
+                    <article class="info-item">
+                        <span class="info-label">Tasks</span>
+                        <p class="info-value">Character Concept · Creature Modeling · Prop Modeling · Level Art · Texturing</p>
+                    </article>
+                    <article class="info-item">
+                        <span class="info-label">Art Direction</span>
+                        <p class="info-value">Organic Horror · Body Horror · Dark Fantasy</p>
+                    </article>
+                </div>
+
+                <p class="section-intro">
+                    Enthaur: Lost in Slumber is a first-person adventure game developed at IIM Paris, in which the player
+                    explores the decaying, living interior of a dying homunculus. I was part of the Game Art team,
+                    working on character concept and creature design, several key 3D props, and early-game level art.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-divider" aria-hidden="true"></section>
+
+        <section class="game-section">
+            <h2 class="section-title">Game Overview</h2>
+            <p class="section-intro">
+                A strange world to discover... You are a homunculus, a being created out of despair.
+                Your world is a vast, living creature, now dying, too weak to create another like you.
+            </p>
+            <p class="section-intro">
+                As the last of your kind, your survival is bound to its recovery. Heal the organism, or perish with it.
+                Guided by the remnants and tools left behind by previous homunculi, you must act quickly, as something
+                else has already claimed its place inside.
+            </p>
+            <p class="section-intro">
+                Discover a decaying world inside what seems to be a dying homunculus, use what you will find in this
+                soon-to-be rotten creature, and try to save it... or at least save yourself...
+            </p>
+
+            <div class="info-grid">
+                <article class="info-item">
+                    <span class="info-label">Platform</span>
+                    <p class="info-value">PC</p>
+                </article>
+                <article class="info-item">
+                    <span class="info-label">Game Mode</span>
+                    <p class="info-value">Single Player · First Person</p>
+                </article>
+                <article class="info-item">
+                    <span class="info-label">Engine</span>
+                    <p class="info-value">Unity</p>
+                </article>
+                <article class="info-item">
+                    <span class="info-label">Content</span>
+                    <p class="info-value">Vertical Slice — ~30/40 min of gameplay</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <h2 class="section-title">Gameplay</h2>
+            <p class="section-intro">Move in first person through the creature's interior, climbing flesh, crossing cavities, and pulling yourself through collapsing passages.</p>
+            <p class="section-intro">Use your lantern to reveal paths, detect parasites, and survive areas swallowed by darkness.</p>
+            <p class="section-intro">Manipulate sinews, tissues, and organic mechanisms to open routes, stabilize zones, and solve environmental puzzles.</p>
+            <p class="section-intro">Avoid parasites through stealth and timing, hiding, fleeing, and using the environment to stay unseen.</p>
+            <p class="section-intro">Heal failing areas of the creature to keep it alive... and keep yourself alive with it.</p>
+        </section>
+
+        <section class="game-section media-card">
+            <h2 class="section-title">Trailer</h2>
+            <p class="section-intro">Watch the official trailer for Enthaur: Lost in Slumber.</p>
+            <div class="trailer-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/fgXz04_kGFg?autoplay=1&mute=1&loop=1&playlist=fgXz04_kGFg&rel=0&modestbranding=1&playsinline=1"
+                    title="Enthaur: Lost in Slumber Trailer"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section-divider" aria-hidden="true"></section>
+
+        <section class="game-section">
+            <h2 class="section-title">Character Concepts</h2>
+            <p class="section-intro">Original concept design for the village chief character, and early exploration for the main character.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_concept_art_main_character_and_moodboard.png" alt="Main character concept art and moodboard">
+            </div>
+            <p class="section-intro">Moodboard and original concept for the main character, chief of the village. This character was never taken further into 3D, as it wasn't scheduled for modeling.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_concept_art_village_chief_and_moodboard.png" alt="Village chief concept art and moodboard">
+            </div>
+            <p class="section-intro">Moodboard and original concept for the village chief, including a full color turnaround.</p>
+        </section>
+
+        <section class="section-divider" aria-hidden="true"></section>
+
+        <section class="game-section">
+            <h2 class="section-title">The Parasite</h2>
+            <p class="section-intro">The parasite was fully designed and modeled by me, from early 2D exploration to the final textured 3D creature.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_concept_art_parasite_and_moodboard.png" alt="Parasite concept art and moodboard">
+            </div>
+            <p class="section-intro">Research moodboard, exploratory 2D sketches, and the final concept with a full color turnaround.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_parasite_turnc_oncept_vs_3D_wireframe.png" alt="Parasite concept versus 3D wireframe comparison">
+            </div>
+            <p class="section-intro">Low poly 3D model, sculpted in ZBrush and built in Blender, shown in wireframe from front, side, top and bottom to check it stayed faithful to the concept.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_parasite_3D_composition.png" alt="Parasite 3D composition split into parts for animation">
+            </div>
+            <p class="section-intro">The parasite was planned to be animated in-game, so the model was carefully split into three separate parts to make the animator's work easier. Reinforcements were added around future fold and bend areas (legs, mouth and body) to support the range of motion needed for animation.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_parasite_3D_txt.png" alt="Parasite final textured 3D model">
+            </div>
+            <p class="section-intro">Final textured version of the parasite, with textures created in Substance 3D Painter.</p>
+
+            <div class="carousel-header">
+                <h3 class="subsection-title">Parasite In-Game</h3>
+            </div>
+            <div class="media-carousel">
+                <figure class="media-slide"><img src="../../assets/art/Enthaur/_screens/Enthaur_Parasite_1.png" alt="Parasite in-game screenshot 01"></figure>
+                <figure class="media-slide"><img src="../../assets/art/Enthaur/_screens/Enthaur_Parasite_2.png" alt="Parasite in-game screenshot 02"></figure>
+                <figure class="media-slide"><img src="../../assets/art/Enthaur/_screens/Enthaur_Parasite_3.png" alt="Parasite in-game screenshot 03"></figure>
+                <figure class="media-slide"><img src="../../assets/art/Enthaur/_screens/Enthaur_Parasite_source.png" alt="Parasite source render"></figure>
+                <figure class="media-slide"><img src="../../assets/art/Enthaur/_screens/Enthaur_Parasites.png" alt="Parasites in-game screenshot"></figure>
+            </div>
+
+            <p class="section-intro">After I left the team, the parasite was rigged and animated by Reda Lotfi during the second production phase. The model's part separation and reinforced fold areas were built specifically to support this animation work.</p>
+            <div class="image-showcase">
+                <video src="../../assets/art/Enthaur/video/20251028-1501-57.4548261.mp4" controls playsinline></video>
+            </div>
+            <div class="gif-duo">
+                <figure><img src="../../assets/art/Enthaur/video/GIF_parasite.gif" alt="Parasite animation GIF 01"></figure>
+                <figure><img src="../../assets/art/Enthaur/video/GIF_parasite_2.gif" alt="Parasite animation GIF 02"></figure>
+            </div>
+        </section>
+
+        <section class="section-divider" aria-hidden="true"></section>
+
+        <section class="game-section">
+            <h2 class="section-title">Character Hands</h2>
+            <p class="section-intro">I modeled the hands of the character the player embodies. High poly sculpted in ZBrush, retopologized in Blender, and textured in Substance 3D Painter.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_hands_hp_lp_txt.png" alt="Character hands high poly, low poly and textured comparison">
+            </div>
+        </section>
+
+        <section class="section-divider" aria-hidden="true"></section>
+
+        <section class="game-section">
+            <h2 class="section-title">Lungs &amp; Heart</h2>
+            <p class="section-intro">I designed and modeled the lungs prop, a key organic landmark inside the creature's body.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_poumons_moodboard_concepts_3D_model_txt.png" alt="Lungs moodboard, concepts and final textured 3D model">
+            </div>
+            <p class="section-intro">Moodboard and inspiration references, exploratory concepts, then the 3D model sculpted in ZBrush and textured in Substance 3D Painter.</p>
+            <p class="section-intro">I also modeled, textured and integrated a heart, plugged directly into the lungs.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_poumons_et_coeur_3D_et_txt.png" alt="Lungs and heart 3D model and textures">
+            </div>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/_screens/Enthaur_poumons.png" alt="Lungs and heart in-game screenshot">
+            </div>
+        </section>
+
+        <section class="section-divider" aria-hidden="true"></section>
+
+        <section class="game-section">
+            <h2 class="section-title">Amber Source</h2>
+            <p class="section-intro">I modeled and textured the amber source prop, based on a concept created by Résa Lotfi. Two versions were made: one with a bone-like base for platforms, and one with a muscle-like base for organic surfaces.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/enthaur_source_concept_vs_3D_model_txt.png" alt="Amber source concept versus 3D model and textures">
+            </div>
+        </section>
+
+        <section class="section-divider" aria-hidden="true"></section>
+
+        <section class="game-section">
+            <h2 class="section-title">Level Art</h2>
+            <p class="section-intro">I built the first tutorial level, representing the village, along with a large part of the game's first production phase.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/_screens/Enthaur_ingame_village.png" alt="In-game screenshot of the village tutorial level">
+            </div>
+            <p class="section-intro">A screenshot showcasing the character's hands alongside the lungs and heart centerpiece, drawing the eye toward the middle of the scene.</p>
+            <div class="image-showcase">
+                <img src="../../assets/art/Enthaur/_screens/Enthaur_ingame.png" alt="In-game screenshot featuring the character hands and the lungs and heart">
+            </div>
+        </section>
+
+        <section class="section-divider" aria-hidden="true"></section>
+
+        <section class="game-section">
+            <h2 class="section-title">Project History</h2>
+            <p class="section-intro">Enthaur started as a first production phase during my M1 year, with a 5-month development period, during which I worked part-time alongside a work-study contract.</p>
+            <p class="section-intro">I then left the team to start Deilist: And Nothing Remains, my end-of-studies M2 game project. Enthaur continued to evolve without me during the following two months of M2, with the parasite being rigged and animated by Reda Lotfi.</p>
+        </section>
+
+        <section class="project-outro">
+            <p class="project-outro__thanks">Thank you for following along with this project!</p>
+            <a href="https://store.steampowered.com/app/4395640/Enthaur__Lost_in_Slumber/" class="project-outro__itch" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-steam" aria-hidden="true"></i>
+                Dare to wake it? Get Enthaur: Lost in Slumber on Steam.
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://www.linkedin.com/in/juliette-joukowski" class="footer-link" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://jouka.itch.io/" class="footer-link" target="_blank" title="Itch.io">
+                <i class="fab fa-itch-io"></i>
+            </a>
+            <a href="../../assets/JOUKOWSKI_Juliette_CV_2026_.pdf" class="footer-link" target="_blank" title="Download CV">
+                <i class="fas fa-file-pdf"></i>
+            </a>
+            <a href="#" class="footer-link" title="Copy email" onclick="copyEmail(event)">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function copyEmail(event) {
+            event.preventDefault();
+            const link = event.currentTarget;
+            const rect = link.getBoundingClientRect();
+            const email = 'juliette.joukowski@gmail.com';
+
+            navigator.clipboard.writeText(email).then(() => {
+                const popup = document.createElement('div');
+                popup.textContent = 'Copied!';
+                popup.style.position = 'fixed';
+                popup.style.top = (rect.top - 50) + 'px';
+                popup.style.left = (rect.left + rect.width / 2) + 'px';
+                popup.style.transform = 'translateX(-50%)';
+                popup.style.background = 'transparent';
+                popup.style.color = '#E99897';
+                popup.style.padding = '10px 20px';
+                popup.style.borderRadius = '8px';
+                popup.style.fontFamily = 'Caveat, cursive';
+                popup.style.fontSize = '1.8rem';
+                popup.style.fontWeight = 'bold';
+                popup.style.pointerEvents = 'none';
+                popup.style.zIndex = '999999';
+                popup.style.opacity = '1';
+                popup.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+                document.body.appendChild(popup);
+
+                setTimeout(() => {
+                    popup.style.opacity = '0';
+                    popup.style.transform = 'translateX(-50%) translateY(-10px)';
+                }, 1500);
+
+                setTimeout(() => {
+                    popup.remove();
+                }, 2000);
+            });
+        }
+    </script>
+    <script src="../../js/games-template.js"></script>
+</body>
+</html>

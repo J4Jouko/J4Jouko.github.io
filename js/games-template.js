@@ -74,15 +74,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lightboxTargets.length) {
         const overlay = document.createElement('div');
         overlay.className = 'lightbox-overlay';
-        overlay.innerHTML = '<button type="button" class="lightbox-close" aria-label="Close">&times;</button><img class="lightbox-overlay-image" alt="">';
+        overlay.innerHTML = `
+            <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+            <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image">&#10094;</button>
+            <img class="lightbox-overlay-image" alt="">
+            <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image">&#10095;</button>
+        `;
         document.body.appendChild(overlay);
 
         const overlayImg = overlay.querySelector('.lightbox-overlay-image');
         const closeBtn = overlay.querySelector('.lightbox-close');
+        const prevBtn = overlay.querySelector('.lightbox-prev');
+        const nextBtn = overlay.querySelector('.lightbox-next');
 
-        const openLightbox = (src, alt) => {
-            overlayImg.src = src;
-            overlayImg.alt = alt || '';
+        let gallery = [];
+        let currentIndex = -1;
+
+        const showAt = (index) => {
+            if (!gallery.length) return;
+            currentIndex = (index + gallery.length) % gallery.length;
+            const img = gallery[currentIndex];
+            overlayImg.src = img.currentSrc || img.src;
+            overlayImg.alt = img.alt || '';
+        };
+
+        const openLightbox = (img) => {
+            const carousel = img.closest('.media-carousel');
+            gallery = carousel
+                ? Array.from(carousel.querySelectorAll('.media-slide img'))
+                : [img];
+            showAt(gallery.indexOf(img));
+            overlay.classList.toggle('has-nav', gallery.length > 1);
             overlay.classList.add('is-open');
             document.body.classList.add('lightbox-locked');
         };
@@ -93,7 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         lightboxTargets.forEach((img) => {
-            img.addEventListener('click', () => openLightbox(img.currentSrc || img.src, img.alt));
+            img.addEventListener('click', () => openLightbox(img));
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showAt(currentIndex - 1);
+        });
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showAt(currentIndex + 1);
         });
 
         closeBtn.addEventListener('click', closeLightbox);
@@ -101,7 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === overlay) closeLightbox();
         });
         document.addEventListener('keydown', (e) => {
+            if (!overlay.classList.contains('is-open')) return;
             if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showAt(currentIndex - 1);
+            if (e.key === 'ArrowRight') showAt(currentIndex + 1);
         });
     }
 });

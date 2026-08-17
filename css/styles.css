@@ -460,6 +460,45 @@ body {
 }
 
 /* ============================================
+   PROJECT PAGE BACK BUTTON
+   ============================================ */
+
+.project-back-btn {
+    position: fixed;
+    top: 86px;
+    left: 24px;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(214, 198, 122, 0.5);
+    background: rgba(15, 21, 48, 0.85);
+    color: #e9dfb8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.project-back-btn:hover {
+    border-color: #f0ce7a;
+    color: #f0ce7a;
+    transform: translateX(-3px);
+}
+
+@media (max-width: 768px) {
+    .project-back-btn {
+        top: 78px;
+        left: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
