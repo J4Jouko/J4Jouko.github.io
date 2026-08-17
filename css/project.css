@@ -481,6 +481,33 @@ model-viewer {
     font-style: italic;
 }
 
+.itch-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    padding: 0.65rem 1.4rem;
+    border: 1px solid rgba(214, 198, 122, 0.5);
+    border-radius: 999px;
+    background: rgba(214, 198, 122, 0.08);
+    color: #e6dc9c;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.itch-link i {
+    font-size: 1.1rem;
+}
+
+.itch-link:hover {
+    border-color: #f0ce7a;
+    background: rgba(214, 198, 122, 0.18);
+    color: #f8e9b8;
+    transform: translateY(-2px);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .content-block, 

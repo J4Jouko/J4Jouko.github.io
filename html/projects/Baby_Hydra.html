@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teddy Bear - Portfolio</title>
+    <title>Baby Hydra - Portfolio</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/project.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,23 +27,15 @@
                 flex: 0 1 560px;
             }
         }
-        /* Three floating bears, each gently bobbing/zooming out of sync
-           instead of the single default gentle zoom, for a little levitation. */
-        @keyframes bearFloat1 {
-            0%, 100% { transform: translate(0, 0) rotate(-2deg) scale(1); }
-            50% { transform: translate(-8px, -22px) rotate(2deg) scale(1.04); }
+        /* The hatchling rises slowly into frame instead of the default
+           gentle zoom, like it's clawing its way out of the egg. */
+        @keyframes hydraRise {
+            0% { transform: translateY(20%); }
+            100% { transform: translateY(0); }
         }
-        @keyframes bearFloat2 {
-            0%, 100% { transform: translate(0, 0) rotate(1deg) scale(1); }
-            50% { transform: translate(10px, -16px) rotate(-3deg) scale(1.05); }
+        .banner-model-layer img {
+            animation: hydraRise 3.5s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
         }
-        @keyframes bearFloat3 {
-            0%, 100% { transform: translate(0, 0) rotate(4deg) scale(1); }
-            50% { transform: translate(-10px, -14px) rotate(-1deg) scale(1.06); }
-        }
-        .bear-float-1 img { animation: bearFloat1 7s ease-in-out infinite; }
-        .bear-float-2 img { animation: bearFloat2 8.5s ease-in-out infinite; animation-delay: -2s; }
-        .bear-float-3 img { animation: bearFloat3 6.5s ease-in-out infinite; animation-delay: -4s; }
     </style>
 </head>
 <body>
@@ -66,31 +58,23 @@
         <!-- Banner Section -->
         <header class="project-banner">
             <div class="banner-image">
-                <img src="../../assets/art/TeddyBear/bear_background.png" alt="Teddy Bear background">
+                <img src="../../assets/art/Baby_Hydra/babay_hydre_background.png" alt="Baby Hydra background">
             </div>
-            <div class="banner-model-layer bear-float-1">
-                <img src="../../assets/art/TeddyBear/bear_background_1.png" alt="Floating Teddy Bear">
-            </div>
-            <div class="banner-model-layer bear-float-2">
-                <img src="../../assets/art/TeddyBear/bear_background_2.png" alt="Floating Teddy Bear">
-            </div>
-            <div class="banner-model-layer bear-float-3">
-                <img src="../../assets/art/TeddyBear/bear_background_3.png" alt="Floating Teddy Bear">
+            <div class="banner-model-layer">
+                <img src="../../assets/art/Baby_Hydra/babay_hydre_background_up.png" alt="Baby Hydra 3D character">
             </div>
             <div class="project-tools banner-tools">
                 <img src="../../assets/logo/zbrush_logo_white.png" alt="ZBrush">
-                <img src="../../assets/logo/substance_painter_logo.png" alt="Substance 3D Painter">
-                <img src="../../assets/logo/unity-icon-1.jpg" alt="Unity" style="border-radius:8px;">
             </div>
             <div class="banner-overlay">
                 <div class="banner-content">
-                    <h1 class="project-main-title">TEDDY<br>BEAR</h1>
+                    <h1 class="project-main-title">BABY<br>HYDRA</h1>
                     <div class="project-meta">
-                        <div class="project-meta-text">2024 | School Project — IIM Paris</div>
+                        <div class="project-meta-text">2023 | Fan Art</div>
                     </div>
-                    <p class="project-subtitle">Original Character — Whispers of the Dollhouse</p>
+                    <p class="project-subtitle">Speed Sculpt — 3 Hours in ZBrush</p>
                     <p class="project-description">
-                        Another original character created for <strong>Whispers of the Dollhouse</strong>, the same couch-multiplayer school project as Voodoo Ragdoll. <br> Modeled and textured in ZBrush and Substance 3D Painter, then integrated in Unity.
+                        A fan art speed sculpt based on concept art by Ruby Siswanto. <br> Quickly modeled and painted entirely in ZBrush in about three hours, hatchling heads and all.
                     </p>
                 </div>
             </div>
@@ -102,60 +86,33 @@
             <!-- Block 1: Image Left, Text Right -->
             <section class="content-block">
                 <div class="block-image">
-                    <img src="../../assets/art/TeddyBear/bear_concept.png" alt="Teddy Bear concept art and iterations">
+                    <img src="../../assets/art/Baby_Hydra/babay_hydre_turn.png" alt="Baby Hydra high poly sculpt turnaround">
                 </div>
                 <div class="block-text">
-                    <h2>Concept to Final Design</h2>
-                    <p>This Teddy Bear is another original character created for <strong>Whispers of the Dollhouse</strong>, the same local couch-multiplayer school project as Voodoo Ragdoll. A few outfit iterations were explored before settling on this worn, adventurer-style bear with a stitched vest and a small charm.</p>
+                    <h2>High Poly Sculpt</h2>
+                    <p>Full turnaround of the high poly speed sculpt. With a strict three-hour time limit, the priority was getting the tangle of overlapping heads, open jaws and cracked eggshell to read clearly, rather than refining fine surface detail.</p>
                 </div>
             </section>
 
             <!-- Block 2: Text Left, Image Right -->
             <section class="content-block">
                 <div class="block-image">
-                    <img src="../../assets/art/TeddyBear/bear_turn.png" alt="Teddy Bear high poly sculpt turnaround">
+                    <img src="../../assets/art/Baby_Hydra/babay_hydre_turn_txt.png" alt="Baby Hydra painted turnaround">
                 </div>
                 <div class="block-text">
-                    <h2>High Poly Sculpt</h2>
-                    <p>Full turnaround of the high poly sculpt, modeled in ZBrush. The fur, stitched vest and floppy ears were sculpted to keep a soft, huggable silhouette.</p>
+                    <h2>Quick Painting in ZBrush</h2>
+                    <p>Colored directly in ZBrush with Polypaint, keeping the palette simple and fast to apply: mossy green scales, a pale cracked eggshell, and a touch of pink inside the open mouths.</p>
                 </div>
             </section>
 
             <!-- Block 3: Image Left, Text Right -->
             <section class="content-block">
                 <div class="block-image">
-                    <img src="../../assets/art/TeddyBear/bear_turn_txt.png" alt="Teddy Bear textured turnaround">
+                    <img src="../../assets/art/Baby_Hydra/babay_hydre_my_art_vs_concept.png" alt="Baby Hydra sculpt versus original concept art comparison">
                 </div>
                 <div class="block-text">
-                    <h2>Texturing</h2>
-                    <p>Final PBR texturing created in Substance 3D Painter, with hand-placed fur strokes, leather straps and a slightly faded, well-loved look.</p>
-                </div>
-            </section>
-
-            <!-- Block 4: Text Left, Image Right -->
-            <section class="content-block">
-                <div class="block-image">
-                    <img src="../../assets/art/TeddyBear/bear_hp_lp_wireframe.png" alt="Teddy Bear high poly, low poly and wireframe comparison">
-                </div>
-                <div class="block-text">
-                    <h2>Retopology &amp; Optimization</h2>
-                    <p>High poly, low poly and wireframe comparison. The mesh was retopologized and optimized for real-time use in the game.</p>
-                </div>
-            </section>
-
-            <!-- Block 5: Image Left, Text Right -->
-            <section class="content-block">
-                <div class="block-image">
-                    <img src="../../assets/art/Voodoo_Ragdoll/poster_whispers_of_the_dollhouse.png" alt="Whispers of the Dollhouse game poster">
-                </div>
-                <div class="block-text">
-                    <h2>In-Game Integration</h2>
-                    <p>Like Voodoo Ragdoll, the Teddy Bear was integrated into <strong>Whispers of the Dollhouse</strong> using Unity, playable in local split-screen multiplayer.</p>
-                    <img src="../../assets/art/Voodoo_Ragdoll/TeamUp-ingame_gif.gif" alt="Whispers of the Dollhouse gameplay footage" class="block-logo" style="border-radius:8px;">
-                    <a href="https://lurobis.itch.io/wdh" class="itch-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-itch-io"></i>
-                        Play Whispers of the Dollhouse on Itch.io
-                    </a>
+                    <h2>Fan Art Comparison</h2>
+                    <p>Side-by-side comparison between the 3D speed sculpt and the original concept art by <strong>Ruby Siswanto</strong>, used as reference for the pose, head arrangement and eggshell design.</p>
                     <p class="thanks-message">Thank you for looking!</p>
                 </div>
             </section>
